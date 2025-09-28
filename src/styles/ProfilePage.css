@@ -12,7 +12,7 @@
   position: relative;
   height: 300px;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-                    url('/images/hero-bg.jpg');
+                    url('/crom/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   display: flex;

@@ -5,6 +5,7 @@
 
 import React from 'react';
 import styles from './About.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 interface AboutProps {
   showFullBio?: boolean;
@@ -20,7 +21,7 @@ const About: React.FC<AboutProps> = ({ showFullBio = false }) => {
         <div className={styles.content}>
           <div className={styles.profile}>
             <div className={styles.profileImage}>
-              <img src="/images/optimized/shin_album1.jpg" alt="신해철" />
+              <img src={getImagePath("/images/optimized/shin_album1.jpg")} alt="신해철" />
             </div>
 
             <div className={styles.profileInfo}>

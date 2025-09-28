@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Pages.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 const WorkPlace: React.FC = () => {
   return (
@@ -8,15 +9,15 @@ const WorkPlace: React.FC = () => {
         <div className={styles.workspace}>
           <div className={styles.thumb}>
             <span className={styles.tit}>음악작업실</span>
-            <img src="/workplace-assets/img_ws1.jpg" alt="음악작업실 내부사진1" />
+            <img src={getImagePath("/workplace-assets/img_ws1.jpg")} alt="음악작업실 내부사진1" />
           </div>
           <div className={styles.thumb}>
             <span className={styles.tit}>음악작업실</span>
-            <img src="/workplace-assets/img_ws2.jpg" alt="음악작업실 내부사진2" />
+            <img src={getImagePath("/workplace-assets/img_ws2.jpg")} alt="음악작업실 내부사진2" />
           </div>
           <div className={styles.desc}>
             <p className={styles.titleImage}>
-              <img src="/workplace-assets/tit_ws1.png" alt="신해철거리" />
+              <img src={getImagePath("/workplace-assets/tit_ws1.png")} alt="신해철거리" />
             </p>
             <p>
               성남시 분당구 수내동에 위치한 자신의 음악 작업실에서 새 음악을 만드는데 열중해 왔으며,
@@ -46,18 +47,18 @@ const WorkPlace: React.FC = () => {
           </div>
           <div className={styles.thumb}>
             <span className={styles.tit}>서재</span>
-            <img src="/workplace-assets/img_ws3.jpg" alt="서재 내부사진" />
+            <img src={getImagePath("/workplace-assets/img_ws3.jpg")} alt="서재 내부사진" />
           </div>
           <div className={styles.thumb}>
             <span className={styles.tit}>책장과 도서들</span>
-            <img src="/workplace-assets/img_ws4.jpg" alt="서재 책장과 도서들" />
+            <img src={getImagePath("/workplace-assets/img_ws4.jpg")} alt="서재 책장과 도서들" />
           </div>
         </div>
 
         <div className={styles.workspace}>
           <div className={styles.thumb}>
             <span className={styles.tit}>레코드실</span>
-            <img src="/workplace-assets/img_ws5.jpg" alt="레코드실 내부사진1" />
+            <img src={getImagePath("/workplace-assets/img_ws5.jpg")} alt="레코드실 내부사진1" />
           </div>
           <div className={styles.desc}>
             <p>
@@ -74,7 +75,7 @@ const WorkPlace: React.FC = () => {
           </div>
           <div className={styles.thumb}>
             <span className={styles.tit}>레코드실</span>
-            <img src="/workplace-assets/img_ws6.jpg" alt="레코드실 내부사진2" />
+            <img src={getImagePath("/workplace-assets/img_ws6.jpg")} alt="레코드실 내부사진2" />
           </div>
         </div>
       </div>

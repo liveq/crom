@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './StreetMap.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 interface MapArea {
   id: string;
@@ -180,7 +181,7 @@ const StreetMap: React.FC = () => {
             <div className={styles.modalHeader}>
               <h2>{selectedArea.name}</h2>
               <button className={styles.closeButton} onClick={handleCloseModal}>
-                <img src="/street-assets/btn_close.png" alt="닫기" />
+                <img src={getImagePath("/street-assets/btn_close.png")} alt="닫기" />
               </button>
             </div>
 
@@ -190,26 +191,26 @@ const StreetMap: React.FC = () => {
                 onClick={() => setViewMode('day')}
                 title="주간"
               >
-                <img src="/street-assets/btn_menu1.png" alt="주간" />
+                <img src={getImagePath("/street-assets/btn_menu1.png")} alt="주간" />
               </button>
               <button
                 className={`${styles.tabButton} ${styles.tab2} ${viewMode === 'night' ? styles.active : ''}`}
                 onClick={() => setViewMode('night')}
                 title="야간"
               >
-                <img src="/street-assets/btn_menu2.png" alt="야간" />
+                <img src={getImagePath("/street-assets/btn_menu2.png")} alt="야간" />
               </button>
               <button
                 className={`${styles.tabButton} ${styles.tab3}`}
                 title="파노라마"
               >
-                <img src="/street-assets/btn_menu3.png" alt="파노라마" />
+                <img src={getImagePath("/street-assets/btn_menu3.png")} alt="파노라마" />
               </button>
             </div>
 
             <div className={styles.modalBody}>
               <button className={`${styles.navButton} ${styles.bxPrev}`} onClick={handlePrevImage}>
-                <img src="/street-assets/btn_prev.png" alt="이전" />
+                <img src={getImagePath("/street-assets/btn_prev.png")} alt="이전" />
               </button>
 
               <div className={styles.imageContainer}>
@@ -221,7 +222,7 @@ const StreetMap: React.FC = () => {
               </div>
 
               <button className={`${styles.navButton} ${styles.bxNext}`} onClick={handleNextImage}>
-                <img src="/street-assets/btn_next.png" alt="다음" />
+                <img src={getImagePath("/street-assets/btn_next.png")} alt="다음" />
               </button>
             </div>
 
@@ -239,7 +240,7 @@ const StreetMap: React.FC = () => {
             <div className={styles.workplaceHeader}>
               <h2>작업실</h2>
               <button className={styles.closeButton} onClick={() => setShowWorkplace(false)}>
-                <img src="/street-assets/btn_close.png" alt="닫기" />
+                <img src={getImagePath("/street-assets/btn_close.png")} alt="닫기" />
               </button>
             </div>
 

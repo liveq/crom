@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Pages.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 interface Restaurant {
   id: number;
@@ -24,7 +25,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-719-1182",
       address: "발이봉로3번길 2",
       mapUrl: "http://dmaps.kr/7p85a",
-      imageUrl: "/food-images/img_food1.jpg",
+      imageUrl: getImagePath("/food-images/img_food1.jpg"),
       section: "게이트 ~ 수내어린이공원"
     },
     {
@@ -34,7 +35,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-717-4605",
       address: "발이봉로 10",
       mapUrl: "http://dmaps.kr/7p85e",
-      imageUrl: "/food-images/img_food2.jpg",
+      imageUrl: getImagePath("/food-images/img_food2.jpg"),
       section: "게이트 ~ 수내어린이공원"
     },
     {
@@ -44,7 +45,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-716-1617",
       address: "발이봉로 10",
       mapUrl: "http://dmaps.kr/7p85e",
-      imageUrl: "/food-images/img_food3.jpg",
+      imageUrl: getImagePath("/food-images/img_food3.jpg"),
       section: "게이트 ~ 수내어린이공원"
     },
     {
@@ -54,7 +55,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-714-5028",
       address: "발이봉로3번길 9",
       mapUrl: "http://dmaps.kr/7nq86",
-      imageUrl: "/food-images/img_food5.jpg",
+      imageUrl: getImagePath("/food-images/img_food5.jpg"),
       section: "게이트 ~ 수내어린이공원"
     },
     {
@@ -64,7 +65,7 @@ const FoodGuide: React.FC = () => {
       phone: "070-8888-1379",
       address: "발이봉로3번길 9",
       mapUrl: "http://dmaps.kr/7nq86",
-      imageUrl: "/food-images/img_food6.jpg",
+      imageUrl: getImagePath("/food-images/img_food6.jpg"),
       section: "게이트 ~ 수내어린이공원"
     },
     // Section 2: 신해철음악작업실 ~ 공영주차장
@@ -75,7 +76,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-716-5881",
       address: "불정로 254",
       mapUrl: "http://dmaps.kr/7p864",
-      imageUrl: "/food-images/img_food9.jpg",
+      imageUrl: getImagePath("/food-images/img_food9.jpg"),
       section: "신해철음악작업실 ~ 공영주차장"
     },
     {
@@ -85,7 +86,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-716-1465",
       address: "발이봉로 6",
       mapUrl: "http://dmaps.kr/7p867",
-      imageUrl: "/food-images/img_food10.jpg",
+      imageUrl: getImagePath("/food-images/img_food10.jpg"),
       section: "신해철음악작업실 ~ 공영주차장"
     },
     {
@@ -95,7 +96,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-713-4002",
       address: "발이봉로3번길 12",
       mapUrl: "http://dmaps.kr/2e99o",
-      imageUrl: "/food-images/img_food11.jpg",
+      imageUrl: getImagePath("/food-images/img_food11.jpg"),
       section: "신해철음악작업실 ~ 공영주차장"
     },
     {
@@ -105,7 +106,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-714-9951",
       address: "발이봉로3번길 10",
       mapUrl: "http://dmaps.kr/7p86o",
-      imageUrl: "/food-images/img_food12.jpg",
+      imageUrl: getImagePath("/food-images/img_food12.jpg"),
       section: "신해철음악작업실 ~ 공영주차장"
     },
     {
@@ -115,7 +116,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-716-5299",
       address: "발이봉로3번길 8-1",
       mapUrl: "http://dmaps.kr/7p86r",
-      imageUrl: "/food-images/img_food13.jpg",
+      imageUrl: getImagePath("/food-images/img_food13.jpg"),
       section: "신해철음악작업실 ~ 공영주차장"
     },
     {
@@ -125,7 +126,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-711-7244",
       address: "발이봉로3번길 6",
       mapUrl: "http://dmaps.kr/7p86w",
-      imageUrl: "/food-images/img_food15.jpg",
+      imageUrl: getImagePath("/food-images/img_food15.jpg"),
       section: "신해철음악작업실 ~ 공영주차장"
     },
     // Section 3: 발이봉남로7번길 7-1 / 발이봉남로15번길 2
@@ -136,7 +137,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-714-5882",
       address: "발이봉남로7번길 7-1",
       mapUrl: "http://dmaps.kr/7p896",
-      imageUrl: "/food-images/img_food23.jpg",
+      imageUrl: getImagePath("/food-images/img_food23.jpg"),
       section: "발이봉남로7번길 7-1 / 발이봉남로15번길 2"
     },
     {
@@ -146,7 +147,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-717-1455",
       address: "발이봉남로15번길 2",
       mapUrl: "http://dmaps.kr/7p89b",
-      imageUrl: "/food-images/img_food24.jpg",
+      imageUrl: getImagePath("/food-images/img_food24.jpg"),
       section: "발이봉남로7번길 7-1 / 발이봉남로15번길 2"
     },
     // Section 4: 발이봉남로 14 ~ 발이봉남로 6
@@ -157,7 +158,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-717-0448",
       address: "발이봉남로 14",
       mapUrl: "http://dmaps.kr/7p89d",
-      imageUrl: "/food-images/img_food25.jpg",
+      imageUrl: getImagePath("/food-images/img_food25.jpg"),
       section: "발이봉남로 14 ~ 발이봉남로 6"
     },
     {
@@ -167,7 +168,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-777-2344",
       address: "발이봉남로12번길 4",
       mapUrl: "http://dmaps.kr/7p89e",
-      imageUrl: "/food-images/img_food26.jpg",
+      imageUrl: getImagePath("/food-images/img_food26.jpg"),
       section: "발이봉남로 14 ~ 발이봉남로 6"
     },
     {
@@ -177,7 +178,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-716-8077",
       address: "발이봉남로 6",
       mapUrl: "http://dmaps.kr/7p89i",
-      imageUrl: "/food-images/img_food27.jpg",
+      imageUrl: getImagePath("/food-images/img_food27.jpg"),
       section: "발이봉남로 14 ~ 발이봉남로 6"
     },
     // Section 5: 불정로 25 ~ 불정로 260
@@ -188,7 +189,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-714-8825",
       address: "불정로 254",
       mapUrl: "http://dmaps.kr/7p864",
-      imageUrl: "/food-images/img_food28.jpg",
+      imageUrl: getImagePath("/food-images/img_food28.jpg"),
       section: "불정로 25 ~ 불정로 260"
     },
     {
@@ -198,7 +199,7 @@ const FoodGuide: React.FC = () => {
       phone: "",
       address: "불정로 254",
       mapUrl: "http://dmaps.kr/7p864",
-      imageUrl: "/food-images/img_food29.jpg",
+      imageUrl: getImagePath("/food-images/img_food29.jpg"),
       section: "불정로 25 ~ 불정로 260"
     },
     {
@@ -208,7 +209,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-719-7564",
       address: "불정로 256",
       mapUrl: "http://dmaps.kr/7p85w",
-      imageUrl: "/food-images/img_food30.jpg",
+      imageUrl: getImagePath("/food-images/img_food30.jpg"),
       section: "불정로 25 ~ 불정로 260"
     },
     {
@@ -218,7 +219,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-713-2229",
       address: "불정로 256",
       mapUrl: "http://dmaps.kr/7p85w",
-      imageUrl: "/food-images/img_food32.jpg",
+      imageUrl: getImagePath("/food-images/img_food32.jpg"),
       section: "불정로 25 ~ 불정로 260"
     },
     // Section 6: 발이봉북로 16 ~ 14
@@ -229,7 +230,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-711-1151",
       address: "발이봉로 16",
       mapUrl: "http://dmaps.kr/7p8ad",
-      imageUrl: "/food-images/img_food37.jpg",
+      imageUrl: getImagePath("/food-images/img_food37.jpg"),
       section: "발이봉북로 16 ~ 14"
     },
     {
@@ -239,7 +240,7 @@ const FoodGuide: React.FC = () => {
       phone: "031-714-5589",
       address: "발이봉로 14",
       mapUrl: "http://dmaps.kr/7p8ag",
-      imageUrl: "/food-images/img_food38.jpg",
+      imageUrl: getImagePath("/food-images/img_food38.jpg"),
       section: "발이봉북로 16 ~ 14"
     }
   ];

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './Construction.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 // Import jQuery and bxSlider
 declare global {
@@ -125,7 +126,7 @@ const Construction: React.FC = () => {
             </div>
             <div className={styles.thumb}>
               <img
-                src={`/construction-images/area${sectionNumber}_week${week}_${photo.toString().padStart(2, '0')}.jpg`}
+                src={getImagePath(`/construction-images/area${sectionNumber}_week${week}_${photo.toString().padStart(2, '0')}.jpg`)}
                 alt={`${sections[sectionNumber-1].title} ${week}주차 사진${photo}`}
                 onError={(e) => {
                   console.log(`Image not found: area${sectionNumber}_week${week}_${photo.toString().padStart(2, '0')}.jpg`);
