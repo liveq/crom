@@ -47,6 +47,17 @@ jobs:
           # Gemini API Key (필요한 경우)
           VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
 
+      - name: Copy public assets to dist
+        run: |
+          cp -r public/images dist/ || true
+          cp -r public/attraction-images dist/ || true
+          cp -r public/street-images dist/ || true
+          cp -r public/food-images dist/ || true
+          cp -r public/construction-images dist/ || true
+          cp -r public/street-assets dist/ || true
+          cp public/favicon.svg dist/ || true
+          cp public/404.html dist/ || true
+
       - name: List build output
         run: |
           echo "Build output contents:"

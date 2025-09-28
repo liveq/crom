@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 # dist (GitHub Pages용으로 주석 처리)
+# dist
 dist-ssr
 *.local
 
