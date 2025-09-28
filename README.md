@@ -1,4 +1,10 @@
-# React + TypeScript + Vite
+# CROM - 신해철 추모 사이트
+
+[![Deploy Status](https://github.com/liveq/crom/actions/workflows/deploy.yml/badge.svg)](https://github.com/liveq/crom/actions/workflows/deploy.yml)
+
+🌐 **Live Site**: https://liveq.github.io/crom/
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
