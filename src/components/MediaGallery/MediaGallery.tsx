@@ -7,6 +7,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styles from './MediaGallery.module.css';
 import type { MediaItem } from '../../types';
+import { getImagePath } from '../../utils/assetPaths';
 
 interface MediaGalleryProps {
   photos?: MediaItem[];
@@ -172,14 +173,14 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({
                 srcSet={
                   item.thumbnailUrl
                     ? item.thumbnailUrl.replace(/\.(jpg|jpeg|png)$/i, '.webp')
-                    : `/images/thumbnails/${item.url.split('/').pop()?.replace(/\.(jpg|jpeg|png)$/i, '.webp')}`
+                    : getImagePath(`/images/thumbnails/${item.url.split('/').pop()?.replace(/\.(jpg|jpeg|png)$/i, '.webp')}`)
                 }
                 type="image/webp"
               />
               <img
                 src={
                   item.thumbnailUrl ||
-                  `/images/thumbnails/${item.url.split('/').pop()?.replace(/\.(jpg|jpeg|png)$/i, '.jpg')}`
+                  getImagePath(`/images/thumbnails/${item.url.split('/').pop()?.replace(/\.(jpg|jpeg|png)$/i, '.jpg')}`)
                 }
                 alt={item.title}
                 loading="lazy"
@@ -228,7 +229,7 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({
           >
             <div className={styles.videoThumbnail}>
               <img
-                src={item.thumbnailUrl || '/images/video-placeholder.jpg'}
+                src={item.thumbnailUrl || getImagePath('/images/video-placeholder.jpg')}
                 alt={item.title}
                 loading="lazy"
               />

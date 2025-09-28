@@ -6,6 +6,7 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from './Hero.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 interface HeroProps {
   // 확장 가능한 props
@@ -21,7 +22,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({
-  backgroundImage = '/images/hero-default.jpg',
+  backgroundImage = getImagePath('/images/hero-default.jpg'),
   title = "영원한 마왕",
   subtitle = "",
   description = "음악으로 세상을 바꾸고자 했던 아티스트를 기억합니다",

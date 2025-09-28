@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Pages.module.css';
+import { getImagePath } from '../../utils/assetPaths';
 
 interface Attraction {
   id: number;
@@ -21,7 +22,7 @@ const Attractions: React.FC = () => {
       name: "망경암 마애여래좌상",
       description: "1980년 6월 2일 경기도 유형문화재 제102호로 지정 1300년 전부터 전해오니는 암석을 조각하여 좌 앞면인 화강암에 삼막된 압면에 육조 사찰의 장애를 오시트...",
       address: "경기도 성남시 수정구 복정동 산65",
-      imageUrl: "/attraction-images/img_travel1.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel1.jpg"),
       page: 1
     },
     {
@@ -29,7 +30,7 @@ const Attractions: React.FC = () => {
       name: "채테마파크",
       description: "책을파르크는 시민들이 함께 하는 다양한 체험, 공연, 전시행사 등으로 방문객들이 책과 자연스럽게 친숙해질 수 있는 기회를 제공해 책과 함께 숨쉬트...",
       address: "경기도 성남시 분당구 문정로 145",
-      imageUrl: "/attraction-images/img_travel2.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel2.jpg"),
       page: 1
     },
     {
@@ -37,7 +38,7 @@ const Attractions: React.FC = () => {
       name: "성남시 민속공예전시관",
       description: "공예산업 부지와 전통문화의 전승 및 발걸음 위해 설립 공정자진 최신 빈곤재산 박문업들에는 논문 문화 조율 에잘과 정신다 전시난시는 작와시의 가치발...",
       address: "경기도 성남시 중원구 산성대로 476번길 5-3",
-      imageUrl: "/attraction-images/img_travel3.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel3.jpg"),
       page: 1
     },
     {
@@ -45,7 +46,7 @@ const Attractions: React.FC = () => {
       name: "신대동 전통명상센터",
       description: "전통명상과 현대명상을 체험할 수 있는 명상 전문센터. 다양한 명상 프로그램과 힐링 체험을 제공한다.",
       address: "경기도 성남시 수정구 신촌남로 47",
-      imageUrl: "/attraction-images/img_travel4.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel4.jpg"),
       page: 1
     },
     {
@@ -53,7 +54,7 @@ const Attractions: React.FC = () => {
       name: "한국잡월드",
       description: "청소년들이 다양한 직업을 체험하고 진로를 탐색할 수 있는 국내 최대 규모의 직업체험관. 어린이체험관, 청소년체험관 등으로 구성되어 있다.",
       address: "경기도 성남시 분당구 분당수서로 501",
-      imageUrl: "/attraction-images/img_travel5.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel5.jpg"),
       page: 1
     },
     {
@@ -61,7 +62,7 @@ const Attractions: React.FC = () => {
       name: "신구대학교식물원",
       description: "사계절 아름다운 식물들을 관찰할 수 있는 생태학습장. 온실, 약용식물원, 습지원 등 테마별 정원과 산책로가 조성되어 있다.",
       address: "경기도 성남시 수정구 적푸리로 9",
-      imageUrl: "/attraction-images/img_travel6.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel6.jpg"),
       page: 1
     },
     // Page 2
@@ -70,7 +71,7 @@ const Attractions: React.FC = () => {
       name: "판교환경생태학습원",
       description: "어린이들에게 평소 접으로만 접했던 숲, 습지 등의 생태계를 생생히 관찰할 수 있고 흙바닥도 맘껏 뒹굴어볼 수 있는 신재생 에너지 등 생소한 환경...",
       address: "경기도 성남시 분당구 대왕판교로 645번길 21",
-      imageUrl: "/attraction-images/img_travel7.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel7.jpg"),
       page: 2
     },
     {
@@ -78,7 +79,7 @@ const Attractions: React.FC = () => {
       name: "판교박물관",
       description: "삼국시 최초 공립박물관 판교박물관은 1600여 점 한성백제시대 석실분 밀집 지역으로 삼국시대의 능묵과 교통을 보여주는 중거의 한성백제 최대 규모의...",
       address: "경기도 성남시 분당구 판교로 191",
-      imageUrl: "/attraction-images/img_travel8.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel8.jpg"),
       page: 2
     },
     {
@@ -86,7 +87,7 @@ const Attractions: React.FC = () => {
       name: "정자동 카페거리",
       description: "해외에서 보던 멋진 거리 정자동 카페거리는 아름답고 맛진 테라스로 이루어져 있어 마치 외국의 명품거리에 온 듯한 착각이 들 정도로 이국적인 분위기를...",
       address: "경기도 성남시 분당구 정자동",
-      imageUrl: "/attraction-images/img_travel9.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel9.jpg"),
       page: 2
     },
     {
@@ -94,7 +95,7 @@ const Attractions: React.FC = () => {
       name: "율동공원",
       description: "자연 그대로의 환림공간 율동공원은 물을 이용한 자연호수·공원으로 중앙에 간단한 어린 시절로 많은 안전공원이며 분위기와 경인수호로서 차지하는 단순...",
       address: "경기도 성남시 분당구 문정로 145",
-      imageUrl: "/attraction-images/img_travel10.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel10.jpg"),
       page: 2
     },
     {
@@ -102,7 +103,7 @@ const Attractions: React.FC = () => {
       name: "탄천변",
       description: "생태학습에서 레저까지 우리들의 웰빙 명소 30.6km 거리의 탄천에 우리 시내를 구간 산책로 아스팔트와 자전거 도로가 있고 이곳주변 없길이 탄천로...",
       address: "경기도 성남시 분당구 탄천변로",
-      imageUrl: "/attraction-images/img_travel11.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel11.jpg"),
       page: 2
     },
     {
@@ -110,7 +111,7 @@ const Attractions: React.FC = () => {
       name: "중앙공원",
       description: "역사와 자연을 함께 즐기는 나들이 명소 도심의 중심지에 자리잡은 중앙공원은 역사적인 숲속 수내농장지 아름다운 늦가을의 숲속교육 호안마음 황새울등...",
       address: "경기도 성남시 분당구 황새울로 206",
-      imageUrl: "/attraction-images/img_travel12.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel12.jpg"),
       page: 2
     },
     // Page 3
@@ -119,7 +120,7 @@ const Attractions: React.FC = () => {
       name: "성남아트센터",
       description: "생활이 예술이 되는 곳 아름다운 자연과 함께 시민들이 찾고 싶은 센터. 자기와의 코스트로 차터와커 있는 성남아트센터는 전문 문화예술 공간으로...",
       address: "경기도 성남시 분당구 성남대로 808",
-      imageUrl: "/attraction-images/img_travel13.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel13.jpg"),
       page: 3
     },
     {
@@ -127,7 +128,7 @@ const Attractions: React.FC = () => {
       name: "봉국사 대광명전",
       description: "도심속 특별한 산사 경기도 유형문화재 제101호인 대광명전은 현종 15년(1674) 인금은 언급된 왕의 조은 명예, 명성 두 공주의 명복을 빌기 위해 공주의 능...",
       address: "경기도 성남시 수정구 태평로 79",
-      imageUrl: "/attraction-images/img_travel14.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel14.jpg"),
       page: 3
     },
     {
@@ -135,7 +136,7 @@ const Attractions: React.FC = () => {
       name: "남한산성",
       description: "위기의 순간에도 역사를 이어온 문화유산 남한산성의 역사문화적 가치가 높게 인정되어 2014년 6월 카타르 도하에서 개최된 유네스코 총회에서...",
       address: "경기도 성남시 중원구 남한산성면",
-      imageUrl: "/attraction-images/img_travel15.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel15.jpg"),
       page: 3
     },
     {
@@ -143,7 +144,7 @@ const Attractions: React.FC = () => {
       name: "모란민속 5일장",
       description: "도심에서 열리는 풍프한 5일장 모란은 1960년대 성남동에 열리는 풍프한 5일장과 달리 1960년대 성남에서 열리는 개장하여 최연3300여 천민보오로 누구...",
       address: "경기도 성남시 중원구 둔촌대로 79",
-      imageUrl: "/attraction-images/img_travel16.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel16.jpg"),
       page: 3
     },
     {
@@ -151,7 +152,7 @@ const Attractions: React.FC = () => {
       name: "성남시청",
       description: "시민과 함께하는 문화의 전당 성남시청사는 성남의 중심 지역인 여수지구 시청사 신청사는 시민과 시의 소통 공간, 문화와...",
       address: "경기도 성남시 중원구 성남대로 997",
-      imageUrl: "/attraction-images/img_travel17.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel17.jpg"),
       page: 3
     },
     {
@@ -159,7 +160,7 @@ const Attractions: React.FC = () => {
       name: "성남종합운동장",
       description: "시민의 건강과 여가를 위한 종합 스포츠 공간. 축구장, 야구장 등 다양한 운동시설이 갖춰져 있으며 각종 체육행사가 개최된다.",
       address: "경기도 성남시 중원구 제일로 60",
-      imageUrl: "/attraction-images/img_travel18.jpg",
+      imageUrl: getImagePath("/attraction-images/img_travel18.jpg"),
       page: 3
     }
   ];
@@ -250,7 +251,7 @@ const Attractions: React.FC = () => {
                   display: 'block'
                 }}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/placeholder.jpg';
+                  (e.target as HTMLImageElement).src = getImagePath('/placeholder.jpg');
                 }}
               />
 

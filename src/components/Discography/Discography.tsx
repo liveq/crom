@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import albumsData from '../../data/albums.json';
+import { getImagePath } from '../../utils/assetPaths';
 import './Discography.css';
 
 interface Album {
@@ -87,7 +88,7 @@ const Discography: React.FC = () => {
               <div key={index} className="album-card">
                 <div className="album-cover">
                   <img
-                    src={album.cover}
+                    src={getImagePath(album.cover)}
                     alt={album.title}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

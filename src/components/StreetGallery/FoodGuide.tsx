@@ -399,7 +399,7 @@ const FoodGuide: React.FC = () => {
                   display: 'block'
                 }}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/placeholder.jpg';
+                  (e.target as HTMLImageElement).src = getImagePath('/placeholder.jpg');
                 }}
               />
 

@@ -130,7 +130,7 @@ const Construction: React.FC = () => {
                 alt={`${sections[sectionNumber-1].title} ${week}주차 사진${photo}`}
                 onError={(e) => {
                   console.log(`Image not found: area${sectionNumber}_week${week}_${photo.toString().padStart(2, '0')}.jpg`);
-                  (e.target as HTMLImageElement).src = '/placeholder.jpg';
+                  (e.target as HTMLImageElement).src = getImagePath('/placeholder.jpg');
                 }}
               />
             </div>
