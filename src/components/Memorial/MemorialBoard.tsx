@@ -415,7 +415,7 @@ const MemorialBoard: React.FC = () => {
                           disabled={currentPage === 1}
                           title="10페이지 이전"
                         >
-                          ««
+                          {'<<'}
                         </button>
                       );
                     } else {
@@ -431,7 +431,7 @@ const MemorialBoard: React.FC = () => {
                           disabled={currentPage === 1}
                           title="5페이지 이전"
                         >
-                          ««
+                          {'<<'}
                         </button>
                       );
                     }
@@ -509,7 +509,7 @@ const MemorialBoard: React.FC = () => {
                           disabled={currentPage === totalPages}
                           title="10페이지 다음"
                         >
-                          »»
+                          {'>>'}
                         </button>
                       );
                     } else {
@@ -525,7 +525,7 @@ const MemorialBoard: React.FC = () => {
                           disabled={currentPage === totalPages}
                           title="5페이지 다음"
                         >
-                          »»
+                          {'>>'}
                         </button>
                       );
                     }

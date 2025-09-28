@@ -370,6 +370,15 @@
   color: #999999;
 }
 
+/* 음악 재생 안내 */
+.musicNotice {
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
 /* 라이트박스 */
 .lightbox {
   position: fixed;

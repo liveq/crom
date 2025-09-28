@@ -349,6 +349,13 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({
           )}
         </div>
 
+        {/* 음악 탭 재생 안내 */}
+        {activeTab === 'music' && music.length > 0 && (
+          <div className={styles.musicNotice}>
+            <p>※ 테스트 페이지로 실제 재생은 지원되지 않습니다</p>
+          </div>
+        )}
+
         {/* 페이지네이션 인디케이터 */}
         {totalPages > 1 && (
           <div className={styles.pagination}>

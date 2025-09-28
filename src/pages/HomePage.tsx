@@ -14,6 +14,7 @@ import Footer from '../components/Footer/Footer';
 import ScrollNav from '../components/ScrollNav/ScrollNav';
 import TopButton from '../components/TopButton/TopButton';
 import { getImagePath } from '../utils/assetPaths';
+import styles from './HomePage.module.css';
 
 const HomePage: React.FC = () => {
   // 캐러셀 이미지 데이터
@@ -70,7 +71,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* 이미지 캐러셀 - 최상단 */}
-      <div id="carousel">
+      <div id="carousel" className={styles.section}>
         <ImageCarousel
           images={carouselImages}
           autoPlay={false}
@@ -78,26 +79,28 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* 히어로 섹션 */}
-      <div id="hero">
+      <div id="hero" className={styles.section}>
         <Hero
+          backgroundImage=""
           title="영원한 마왕"
           description="음악으로 세상을 바꾸고자 했던 아티스트를 기억합니다"
           showScrollIndicator={false}
+          overlay={false}
         />
       </div>
 
       {/* About 섹션 */}
-      <div id="about">
+      <div id="about" className={styles.section}>
         <About showFullBio={true} />
       </div>
 
       {/* 디스코그래피 섹션 */}
-      <div id="discography">
+      <div id="discography" className={styles.section}>
         <Discography />
       </div>
 
       {/* 미디어 갤러리 */}
-      <div id="gallery">
+      <div id="gallery" className={styles.section}>
         <MediaGallery
           photos={samplePhotos}
           music={sampleMusic}
@@ -106,12 +109,12 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* 신해철 거리 갤러리 */}
-      <div id="street-gallery">
+      <div id="street-gallery" className={styles.section}>
         <StreetGallery />
       </div>
 
       {/* 추모 메시지 */}
-      <div id="memorial">
+      <div id="memorial" className={styles.section}>
         <MemorialBoard />
       </div>
 

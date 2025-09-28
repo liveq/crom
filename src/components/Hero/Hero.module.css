@@ -12,21 +12,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  isolation: isolate;
+  /* 추모의 이미지를 표현하는 어두운 배경 */
+  background: linear-gradient(
+    180deg,
+    rgba(40, 40, 40, 0.6) 0%,
+    rgba(20, 20, 20, 0.7) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 /* 배경 레이어 */
 .backgroundLayer {
   position: absolute;
-  top: -10%;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: -10%;
+  bottom: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
   /* 기본 흑백 이미지 */
   filter: grayscale(100%);
+  z-index: 1;
 }
 
 /* 오버레이 */
@@ -38,10 +48,11 @@
   bottom: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.75) 100%
   );
+  z-index: 2;
 }
 
 /* 콘텐츠 컨테이너 */

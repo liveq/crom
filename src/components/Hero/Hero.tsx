@@ -72,16 +72,18 @@ const Hero: React.FC<HeroProps> = ({
   return (
     <section className={`${styles.hero} ${className || ''}`}>
       {/* 배경 이미지 레이어 */}
-      <div
-        className={styles.backgroundLayer}
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          ...parallaxStyle
-        }}
-      />
+      {backgroundImage && (
+        <div
+          className={styles.backgroundLayer}
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            ...parallaxStyle
+          }}
+        />
+      )}
 
       {/* 오버레이 레이어 (선택적) */}
-      {overlay && <div className={styles.overlay} />}
+      {overlay && backgroundImage && <div className={styles.overlay} />}
 
       {/* 콘텐츠 레이어 */}
       <div className={styles.content}>

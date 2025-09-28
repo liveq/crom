@@ -21,6 +21,12 @@ const StreetMap: React.FC = () => {
   const [showWorkplace, setShowWorkplace] = useState(false);
   const [workplaceTab, setWorkplaceTab] = useState<'main' | 'library'>('main');
 
+  // 드래그 상태 관리
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const mapContainerRef = React.useRef<HTMLDivElement>(null);
+
   const areas: MapArea[] = [
     {
       id: 'area1',
@@ -122,11 +128,56 @@ const StreetMap: React.FC = () => {
     setCurrentImageIndex(0);
   };
 
+  // 마우스 드래그 핸들러
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (mapContainerRef.current?.offsetLeft || 0));
+    setScrollLeft(mapContainerRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !mapContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - (mapContainerRef.current.offsetLeft || 0);
+    const walk = (x - startX) * 1.5; // 드래그 속도 조절
+    mapContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // 터치 이벤트 핸들러 (모바일)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setStartX(e.touches[0].pageX - (mapContainerRef.current?.offsetLeft || 0));
+    setScrollLeft(mapContainerRef.current?.scrollLeft || 0);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!mapContainerRef.current) return;
+    const x = e.touches[0].pageX - (mapContainerRef.current.offsetLeft || 0);
+    const walk = (x - startX) * 1.5;
+    mapContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   return (
     <>
       <div className={styles.mapSection}>
-        {/* 상단 지도 영역 - 스크롤 가능 */}
-        <div className={styles.mapContainer}>
+        {/* 상단 지도 영역 - 드래그 가능 */}
+        <div
+          ref={mapContainerRef}
+          className={`${styles.mapContainer} ${isDragging ? styles.dragging : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
           <div className={styles.mapInner}>
             <div className={styles.map} onDragStart={(e) => e.preventDefault()}>
               <div className={styles.location}>

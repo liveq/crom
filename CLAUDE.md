@@ -116,6 +116,27 @@ const scrollToSection = (sectionId: string) => {
 };
 ```
 
+### Critical Work Guidelines
+
+#### 작업 중단 키워드
+다음 키워드가 포함된 경우 즉시 작업을 중단하고 대기:
+- **수정 보류**
+- **보류**
+- **중지**
+- **잠깐**
+- **멈춰**
+- **STOP**
+
+#### 디자인 의도 존중
+- 기존 디자인과 색상 스킴을 임의로 변경하지 않음
+- 특히 추모 사이트의 경우 색상과 톤이 중요한 의미를 가짐
+- Hero 섹션: 투명한 회색으로 추모의 이미지 표현 (네이비 X)
+
+#### 작업 우선순위
+- 시간보다 완성도 우선
+- 근본적인 해결책 추구 (z-index 같은 임시방편 X)
+- 사용자 지시사항을 정확히 읽고 따르기
+
 ### Important Implementation Notes
 - **External Drive Only**: All development must be done on external drive (`/Volumes/X31/code/crom-memorial/`) - never use MacBook internal storage
 - **Authentic Data Only**: Never generate fake memorial messages - only use authentic crawled data from original site

@@ -1,0 +1,32 @@
+/* HomePage 섹션 스타일 */
+
+.section {
+  position: relative;
+  /* 완벽한 격리를 위한 contain 속성 */
+  contain: layout paint;
+  /* 추가 안전장치 */
+  overflow: hidden;
+  /* 독립적인 stacking context */
+  isolation: isolate;
+  /* 3D 변환 컨텍스트로 GPU 레이어 분리 */
+  transform: translateZ(0);
+  /* 성능 최적화 힌트 */
+  will-change: contents;
+}
+
+/* 각 섹션이 독립적인 stacking context를 가지도록 */
+#carousel,
+#hero,
+#about,
+#discography,
+#gallery,
+#street-gallery,
+#memorial {
+  position: relative;
+  isolation: isolate;
+}
+
+/* About 섹션 배경색 */
+#about {
+  background: #ffffff;
+}
