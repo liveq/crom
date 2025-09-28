@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/crom/',  // GitHub Pages 배포 경로
+  base: '/',  // GitHub Pages 배포 경로
   plugins: [react()],
   // 개발 서버 설정
   server: {
