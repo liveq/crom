@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clean previous build
+        run: rm -rf dist
+
       - name: Build
         run: npm run build
         env:
@@ -43,6 +46,17 @@ jobs:
           VITE_ADMIN_EMAILS: ${{ secrets.VITE_ADMIN_EMAILS }}
           # Gemini API Key (필요한 경우)
           VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
+
+      - name: List build output
+        run: |
+          echo "Build output contents:"
+          ls -la dist/
+          echo "Asset directories:"
+          ls -la dist/assets/ || true
+          echo "Image directories in dist:"
+          find dist -type d -name "*image*" || true
+          echo "All files in dist:"
+          find dist -type f | head -50
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
