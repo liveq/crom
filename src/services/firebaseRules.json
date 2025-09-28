@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "memorial_messages": {
+      ".read": true,
+      ".write": "auth != null",
+      "$messageId": {
+        ".write": "auth != null && (auth.token.email == 'tlawlgns59@gmail.com' || auth.token.email == 'admin@example.com' || (!data.exists() && auth != null))",
+        ".validate": "newData.hasChildren(['author', 'content', 'createdAt', 'isApproved'])"
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "$uid == auth.uid || auth.token.email == 'tlawlgns59@gmail.com'",
+        ".write": "$uid == auth.uid"
+      }
+    },
+    "gallery_images": {
+      ".read": true,
+      ".write": "auth.token.email == 'tlawlgns59@gmail.com'"
+    },
+    "site_settings": {
+      ".read": true,
+      ".write": "auth.token.email == 'tlawlgns59@gmail.com'"
+    }
+  }
+}

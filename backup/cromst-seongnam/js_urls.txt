@@ -1,0 +1,12 @@
+../common/plugin/jquery.cyclotron.js
+/common/js/default.js
+/common/js/html5shiv.min.js
+/common/js/jquery-3.1.1.min.js
+/common/js/jquery-ui.min.js
+/common/js/respond.min.js
+/common/plugin/jquery.bxslider.js
+/common/plugin/jquery.dotdotdot.min.js
+/common/plugin/jquery.placeholder.js
+/common/plugin/jquery.PrintArea.js
+/common/plugin/materialize.min.js
+/common/plugin/tooltipster.bundle.min.js

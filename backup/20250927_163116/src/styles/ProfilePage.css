@@ -1,0 +1,349 @@
+/**
+ * 프로필 페이지 스타일
+ */
+
+.profile-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+}
+
+/* 히어로 섹션 */
+.profile-hero {
+  position: relative;
+  height: 300px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                    url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  text-align: center;
+  color: white;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* 프로필 컨테이너 */
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.profile-main {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* 사진 섹션 */
+.profile-photo-section {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
+}
+
+.profile-quote {
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid #8b0000;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.profile-quote blockquote {
+  margin: 0;
+  font-style: italic;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.profile-quote cite {
+  display: block;
+  text-align: right;
+  margin-top: 1rem;
+  color: #999;
+}
+
+/* 정보 섹션 */
+.profile-info-section h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.english-name {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.nickname {
+  font-size: 1.8rem;
+  color: #8b0000;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* 정보 테이블 */
+.info-table {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table th {
+  text-align: left;
+  width: 120px;
+  padding: 1rem;
+  color: #8b0000;
+  font-weight: 600;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-table td {
+  padding: 1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 그룹 섹션 */
+.groups-section {
+  margin-top: 3rem;
+}
+
+.groups-section h3 {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #8b0000;
+}
+
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.group-card {
+  background: linear-gradient(135deg, rgba(139,0,0,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(139,0,0,0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139,0,0,0.3);
+  border-color: #8b0000;
+}
+
+.group-card h4 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.group-card .period {
+  color: #8b0000;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.group-card .role {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* 타임라인 */
+.profile-timeline {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.profile-timeline h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 100px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, #8b0000, transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.timeline-item .year {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  width: 80px;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #8b0000;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -66px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #8b0000;
+  border: 3px solid #1a1a1a;
+}
+
+.timeline-item .content {
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid #8b0000;
+  padding: 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .content {
+  background: rgba(255,255,255,0.06);
+  transform: translateX(5px);
+}
+
+.timeline-item h4 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 968px) {
+  .profile-main {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo-section {
+    position: static;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .timeline {
+    padding-left: 60px;
+  }
+
+  .timeline-item .year {
+    left: -60px;
+    font-size: 1.2rem;
+  }
+
+  .timeline-item::before {
+    left: -26px;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .profile-container {
+    padding: 2rem 1rem;
+  }
+
+  .groups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-item .year {
+    position: static;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item::before {
+    display: none;
+  }
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

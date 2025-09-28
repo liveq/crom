@@ -1,0 +1,33 @@
+{
+  "structure": {
+    "sections": [],
+    "navigation": {
+      "hasSlideshow": true,
+      "slideshowClass": "bxslider5",
+      "hasThumbnails": true,
+      "thumbnailCount": 32
+    },
+    "images": {},
+    "layout": {}
+  },
+  "implementation": {
+    "containerStructure": "",
+    "buttonTypes": [
+      {
+        "text": "트위터 공유하기",
+        "onclick": "sns_twitter('', location.href);"
+      },
+      {
+        "text": "페이스북 공유하기",
+        "onclick": "sns_facebook('', location.href);"
+      },
+      {
+        "text": "카카오스토리 공유하기",
+        "onclick": "sns_kakaotok('', location.href);"
+      }
+    ],
+    "imageDisplay": "",
+    "navigationMethod": ""
+  },
+  "timestamp": "2025-09-26T08:59:59.147Z"
+}

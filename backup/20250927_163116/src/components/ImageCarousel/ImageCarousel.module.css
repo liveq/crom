@@ -1,0 +1,297 @@
+/**
+ * ImageCarousel 컴포넌트 스타일
+ * 페이드 효과, 도트 인디케이터
+ */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+}
+
+/* 캡션 */
+.caption {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.caption.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.caption.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.captionText {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.05em;
+}
+
+.year {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* 좌우 화살표 */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* 클릭 영역만 확대 (보이는 크기는 그대로) */
+.arrow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  /* background: rgba(255, 0, 0, 0.1); 디버깅시 주석 해제 */
+}
+
+.carousel:hover .arrow {
+  opacity: 0.5;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1;
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.arrowLeft {
+  left: 30px;
+  pointer-events: auto;
+}
+
+.arrowRight {
+  right: 30px;
+  pointer-events: auto;
+}
+
+/* 도트 인디케이터 */
+.indicators {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.dot.activeDot {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 카운터 (1/3) */
+.counter {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-left: 8px;
+}
+
+/* 포커스 스타일 */
+.carousel:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+}
+
+.arrow:focus-visible,
+.dot:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .carousel {
+    height: 70vh;
+  }
+
+  .caption {
+    bottom: 80px;
+    padding: 12px 24px;
+  }
+
+  .captionText {
+    font-size: 1rem;
+  }
+
+  .year {
+    font-size: 0.75rem;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .arrowLeft {
+    left: 20px;
+  }
+
+  .arrowRight {
+    right: 20px;
+  }
+
+  /* 인디케이터 중앙 정렬 */
+  .indicators {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .counter {
+    font-size: 0.75rem;
+  }
+
+  /* 모바일에서는 화살표 숨김 - 터치/스와이프로 대체 */
+  .arrow {
+    display: none;
+  }
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .carousel {
+    height: 80vh;
+  }
+
+  .caption {
+    bottom: 100px;
+  }
+}
+
+/* 대화면 */
+@media (min-width: 1440px) {
+  .caption {
+    bottom: 140px;
+    padding: 24px 48px;
+  }
+
+  .captionText {
+    font-size: 1.5rem;
+  }
+
+  .arrow {
+    width: 60px;
+    height: 60px;
+  }
+
+  .arrowLeft {
+    left: 50px;
+  }
+
+  .arrowRight {
+    right: 50px;
+  }
+
+  .indicators {
+    bottom: 50px;
+    right: 50px;
+  }
+}

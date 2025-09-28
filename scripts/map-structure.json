@@ -1,0 +1,102 @@
+{
+  "mapBackground": null,
+  "mapElements": [
+    {
+      "className": "btn_area1",
+      "position": {
+        "position": "absolute",
+        "top": "180px",
+        "left": "125px",
+        "width": "132.164px",
+        "height": "109px"
+      },
+      "link": {
+        "href": "https://cromst.seongnam.go.kr:10005/street/street#area1",
+        "text": "진입마당(정면) 구간",
+        "dataModal": "modal-area1",
+        "className": "area1"
+      }
+    },
+    {
+      "className": "btn_area2",
+      "position": {
+        "position": "absolute",
+        "top": "165px",
+        "left": "480px",
+        "width": "91.9062px",
+        "height": "21px"
+      },
+      "link": {
+        "href": "https://cromst.seongnam.go.kr:10005/street/workplace",
+        "text": "신해철 작업실",
+        "dataModal": null,
+        "className": ""
+      }
+    },
+    {
+      "className": "btn_area3",
+      "position": {
+        "position": "absolute",
+        "top": "112px",
+        "left": "633px",
+        "width": "157.664px",
+        "height": "130px"
+      },
+      "link": {
+        "href": "https://cromst.seongnam.go.kr:10005/street/street#area2",
+        "text": "신해철 작업실 구간\n(2023.12.28.까지 운영)",
+        "dataModal": "modal-area2",
+        "className": "area2"
+      }
+    },
+    {
+      "className": "btn_area4",
+      "position": {
+        "position": "absolute",
+        "top": "180px",
+        "left": "1060px",
+        "width": "91.9062px",
+        "height": "109px"
+      },
+      "link": {
+        "href": "https://cromst.seongnam.go.kr:10005/street/street#area3",
+        "text": "추모마당 구간",
+        "dataModal": "modal-area3",
+        "className": "area3"
+      }
+    },
+    {
+      "className": "btn_area5",
+      "position": {
+        "position": "absolute",
+        "top": "112px",
+        "left": "1496.84px",
+        "width": "132.164px",
+        "height": "109px"
+      },
+      "link": {
+        "href": "https://cromst.seongnam.go.kr:10005/street/street#area4",
+        "text": "진입마당(후면) 구간",
+        "dataModal": "modal-area4",
+        "className": "area4"
+      }
+    }
+  ],
+  "styles": {
+    "background": "rgba(0, 0, 0, 0) url(\"https://cromst.seongnam.go.kr:10005/images/content/street_view/bg_street_map.png\") no-repeat scroll 0px 130px / auto padding-box border-box",
+    "backgroundImage": "url(\"https://cromst.seongnam.go.kr:10005/images/content/street_view/bg_street_map.png\")",
+    "width": "1754px",
+    "height": "500px"
+  },
+  "html": "<div class=\"map\">\n\t\t\t\t<div class=\"location\">\n\t\t\t\t\t<span class=\"btn_area1\"><a href=\"#area1\" class=\"area1\" data-modal=\"modal-area1\">진입마당(정면) 구간<i></i></a></span>\n\t\t\t\t\t<span class=\"btn_area2\"><a href=\"/street/workplace\">신해철 작업실<i></i></a></span>\n\t\t\t\t\t<span class=\"btn_area3\"><a href=\"#area2\" class=\"area2\" data-modal=\"modal-area2\">신해철 작업실 구간<br>(2023.12.28.까지 운영)<i></i></a></span>\n\t\t\t\t\t<span class=\"btn_area4\"><a href=\"#area3\" class=\"area3\" data-modal=\"modal-area3\">추모마당 구간<i></i></a></span>\n\t\t\t\t\t<span class=\"btn_area5\"><a href=\"#area4\" class=\"area4\" data-modal=\"modal-area4\">진입마당(후면) 구간<i></i></a></span>\n\t\t\t\t\t<!-- <span class=\"btn_area6\"><a href=\"#area5\" class=\"area5\" data-modal=\"modal-area5\">진입마당(후면)<i></i></a></span> -->\n\t\t\t\t</div>\n\t\t\t</div>",
+  "cssRules": [
+    ".bx-wrapper .bx-loading { min-height: 50px; background: url(\"../images/gate/bx_loader.gif\") center center no-repeat rgb(255, 255, 255); height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; z-index: 2000; }",
+    ".bx-wrapper .bx-pager.bx-default-pager a { background: rgb(102, 102, 102); text-indent: -9999px; display: block; width: 18px; height: 18px; margin: 0px 5px; outline: 0px; border-radius: 18px; }",
+    ".bx-wrapper .bx-pager.bx-default-pager a.active { background: rgb(255, 255, 255); width: 36px; }",
+    ".main_con2 .bx-wrapper .bx-prev { left: 50%; margin-left: -245px; background: url(\"../images/gate/btn_prev2.png\") 0px 0px no-repeat transparent; }",
+    ".main_con2 .bx-wrapper .bx-next { right: 50%; margin-right: -245px; background: url(\"../images/gate/btn_next2.png\") 0px 0px no-repeat transparent; }",
+    ".bx-wrapper .bx-controls-auto .bx-start { display: block; text-indent: -9999px; width: 34px; height: 34px; outline: 0px; background: url(\"/images/main/btn_play1.png\") left top no-repeat; margin: 0px 3px; }",
+    ".bx-wrapper .bx-controls-auto .bx-stop { display: block; text-indent: -9999px; width: 34px; height: 34px; outline: 0px; background: url(\"/images/main/btn_stop1.png\") left top no-repeat; margin: 0px 3px; }",
+    ".bx-wrapper .bx-caption { position: absolute; bottom: 0px; left: 0px; background: rgba(80, 80, 80, 0.75); width: 100%; }"
+  ]
+}

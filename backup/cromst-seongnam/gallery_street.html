@@ -1,0 +1,393 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    
+
+
+
+	<title> 신해철거리</title>
+    
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no,email=no,address=no" />
+
+	<meta name="author" content="신해철거리" />
+	<meta name="copyright" content="경기도 성남시 중원구 성남대로 997(여수동) 성남시청 관광과 / TEL. 031-729-8602" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<meta name="robots" content="index" />
+	<meta name="subject" content="신해철거리" />
+	<meta name="description" content="신해철거리,프롤로그,앨범,갤러리,신해철이야기,신해철거리,커뮤니티" />
+	<meta name="keywords" content="신해철,신해철거리" />
+	<meta name="naver-site-verification" content="75e2ecd85341383bb2de9120f724bf816e065a4c"/>
+
+	<!-- css -->
+	<link type="text/css" rel="stylesheet" href="/common/css/default.css">
+	<link type="text/css" rel="stylesheet" href="/common/css/responsive.css">
+	<link type="text/css" rel="stylesheet" href="/common/css/jquery.bxslider.css">
+
+	<!-- js -->
+	<script type="text/javascript" src="/common/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/common/js/default.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.dotdotdot.min.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.placeholder.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.PrintArea.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="/common/plugin/materialize.min.js"></script> <!-- 모바일웹 레프트 메뉴 -->
+	<script type="text/javascript" src="/common/plugin/tooltipster.bundle.min.js"></script>
+
+	<script type="text/javascript">
+	  // https로 이동
+	  var url = location.href;
+	  if(url.replace("https://","") == url) location.href = "https://cromst.seongnam.go.kr:10005";
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90791842-7"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-90791842-7');
+	</script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	    <script src="/common/js/html5shiv.min.js"></script>
+	    <script src="/common/js/respond.min.js"></script>
+	<![endif]-->
+
+<script type="text/javascript">
+	function goPage(page){
+		$("#cPage").val(page);
+
+		$("#frm").attr("action", "/gallery/street");
+		$("#frm").submit();
+	}
+
+	function goView(idx) {
+		$("#b_idx").val(idx);
+
+		$("#frm").attr("action", "/gallery/streetView");
+		$("#frm").submit();
+	}
+
+	function goSearch() {
+		$("#cPage").val(1);
+
+		$("#frm").attr("action", "/gallery/street");
+		$("#frm").submit();
+	}
+</script>
+</head>
+<body>
+	<!-- accessibility -->
+	
+
+
+<!-- hidden link shortcut -->
+<ul id="accessibility">
+  <li><a href="#skip_con">본문 바로가기</a></li>
+  <li><a href="#skip_lnb">메인메뉴 바로가기</a></li>
+  <li><a href="#skip_snb">세부메뉴 바로가기</a></li>
+</ul>
+
+
+	<!-- header  2018-01-05 -->
+	
+
+
+<div id="wrap">
+	<!-- Pc header  -->
+	<header id="header">
+		<h1 class="logo">
+			<a href="/">신해철<span>거리</span></a>
+		</h1>
+		<nav>
+			<div id="skip_lnb" class="lnb_wrap">
+				<ul class="lnb">
+					<li><a href="/prologue/profile">프롤로그</a>
+						<div id="depth1" class="lnb_depth">
+							<ul>
+								<li><a href="/prologue/profile">프로필</a></li>
+								<li><a href="/prologue/biography">바이오그래피</a></li>
+								<li><a href="/prologue/awards">수상경력</a></li>
+								<li><a href="/prologue/history">걸어온길</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/story/musician">신해철이야기</a>
+						<div id="depth2" class="lnb_depth">
+							<ul>
+								<li><a href="/story/musician">뮤지션 신해철</a></li>
+								<li><a href="/story/human">인간 신해철</a></li>
+								<li><a href="/story/philosophy">시민 신해철</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/street/street">신해철거리</a>
+						<div id="depth3" class="lnb_depth">
+							<ul>
+								<li><a href="/street/street">신해철거리 둘러보기</a></li>
+								<li><a href="/street/workplace">신해철작업실 둘러보기</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/album/shinhaechul">앨범</a>
+						<div id="depth4" class="lnb_depth">
+							<ul>
+								<li><a href="/album/shinhaechul">신해철</a></li>
+								<li><a href="/album/next">넥스트</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/gallery/gallery">갤러리</a>
+						<div id="depth5" class="lnb_depth">
+							<ul>
+								<li><a href="/gallery/gallery">갤러리</a></li>
+								<li><a href="/gallery/street">거리행사</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="/community/notice">커뮤니티</a>
+						<div id="depth6" class="lnb_depth">
+							<ul>
+								<li><a href="/community/notice">공지사항</a></li>
+								<!-- <li><a href="/community/calendar">행사안내</a></li> -->
+								<li><a href="/community/street">거리마당</a></li>
+								<li><a href="/community/memorial">마왕에게 쓰는 편지</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</div>
+			<a href="//www.seongnam.go.kr" class="link" target="_blank"
+				title="성남시청 홈페이지 새창이동">support by <span>성남시</span></a>
+		</nav>
+	</header>
+	<!-- /Pc header  -->
+
+	<!-- Mobile header  -->
+	<nav id="mo_header">
+		<h2 class="skip">모바일용 메뉴</h2>
+		<div id="slide-out" class="side-nav fixed mo_menu">
+			<ul class="collapsible collapsible-accordion depth1">
+				<li><a href="#" class="collapsible-header sub">프롤로그</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/prologue/profile">프로필</a></li>
+							<li><a href="/prologue/biography">바이오그래피</a></li>
+							<li><a href="/prologue/awards">수상경력</a></li>
+							<li><a href="/prologue/history">걸어온길</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">신해철이야기</a>
+					<div class="collapsible-body depth2">
+						<ul>
+								<li><a href="/story/musician">뮤지션 신해철</a></li>
+								<li><a href="/story/human">인간 신해철</a></li>
+								<li><a href="/story/philosophy">시민 신해철</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">신해철거리</a>
+					<div class="collapsible-body depth2">
+						<ul>
+								<li><a href="/street/street">신해철거리 둘러보기</a></li>
+								<li><a href="/street/workplace">신해철작업실 둘러보기</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">앨범</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/album/shinhaechul">신해철</a></li>
+							<li><a href="/album/next">넥스트</a></li>
+						</ul>
+					</div></li>
+				<li><a href="/gallery/gallery" class="collapsible-header">갤러리</a></li>
+				<li><a href="#" class="collapsible-header sub">커뮤니티</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/community/notice">공지사항</a></li>
+							<!-- <li><a href="/community/calendar">행사안내</a></li> -->
+							<li><a href="/community/street">거리마당</a></li>
+							<li><a href="/community/memorial">마왕에게 쓰는 편지</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">이용안내</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/etc/private">개인정보처리방침</a></li>
+							<li><a href="/etc/email">이메일무단수집거부</a></li>
+						</ul>
+					</div></li>
+			</ul>
+		</div>
+		<a href="#menu" data-activates="slide-out"
+			class="button-collapse btn_menu"><i class="fa fa-bars"
+			aria-hidden="true"></i><span class="skip">전체메뉴</span></a> <a href="/"
+			class="btn_home"><i class="fa fa-home" aria-hidden="true"></i><span
+			class="skip">메인화면</span></a>
+		<h2 class="tit">신해철거리</h2>
+	</nav>
+	<script type="text/javascript">
+		$('.button-collapse').sideNav({
+			menuWidth : 300, // Default is 240
+			closeOnClick : true
+		// Closes side-nav on <a> clicks, useful for Angular/Meteor
+		});
+		$('.collapsible').collapsible();
+	</script>
+	<!-- /Mobile header  -->
+
+
+	<div id="container">
+		<div class="con_head">
+
+			<div class="location">
+				<h2>갤러리</h2>
+				<ol class="path">
+					<li><i class="fa fa-home" aria-hidden="true"></i> HOME</li>
+					<li>갤러리</li>
+					<li>거리행사</li>
+				</ol>
+			</div>
+			<!-- /location -->
+
+			<div id="skip_snb" class="snb_wrap">
+				<div class="snb">
+					<ul>
+						<li><a href="/gallery/gallery">갤러리</a></li>
+						<li class="on"><a href="/gallery/street">거리행사</a></li>
+					</ul>
+				</div>
+				<!-- /snb -->
+
+				<!-- sns -->
+				
+
+
+<div class="sns">
+	<ul>
+		<li class="tw"><a class="tooltip" href="#sns_twitter" onclick="sns_twitter('', location.href);" title="트위터 공유하기(새창)">트위터 공유하기</a></li>
+		<li class="fb"><a class="tooltip" href="#sns_facebook" onclick="sns_facebook('', location.href);" title="페이스북 공유하기(새창)">페이스북 공유하기</a></li>
+		<li class="ka"><a class="tooltip" href="#sns_kakaotok" onclick="sns_kakaotok('', location.href);" title="카카오스토리 공유하기(새창)">카카오스토리 공유하기</a></li>
+		<li class="print"><a class="tooltip" href="#sns_print" id="print" title="프린트 출력하기(새창)">프린트 출력하기</a></li>
+	</ul>
+</div>
+
+			</div>
+			<!-- snb_wrap -->
+		</div>
+		<!-- /con_header -->
+
+		<div id="skip_con" class="con_body">
+			<div class="content">
+				<!-- content start -->
+				<form id="frm" name="frm" action="#" method="post">
+					<input type="hidden" name="cPage" id="cPage" value="1" />
+					<input type="hidden" name="b_idx" id="b_idx" />
+				</form>
+				<div class="gallery_list1">
+				<ul>
+				
+					
+					<li>
+						<a href="#view" onclick="goView('13')"><img src="/resources/upload/BOARD_GalleryStreet/201811/6e15de3470fd41b6b14aaca4480ad7ef.jpg" alt="21.jpg" /></a>
+						<div class="desc"><p>HERE I STAND FOR YOU (2018.11.21)</p></div>
+					</li>
+					
+					<li>
+						<a href="#view" onclick="goView('12')"><img src="/resources/upload/BOARD_GalleryStreet/201811/1c8cd9da57c6434586b89b5e470b7451.jpg" alt="20.jpg" /></a>
+						<div class="desc"><p>HERE I STAND FOR YOU (2018.11.20)</p></div>
+					</li>
+					
+					<li>
+						<a href="#view" onclick="goView('11')"><img src="/resources/upload/BOARD_GalleryStreet/201811/d30e2ae55ef241bbb7d78604d221fc95.jpg" alt="14.jpg" /></a>
+						<div class="desc"><p>HERE I STAND FOR YOU (2018.11.14)</p></div>
+					</li>
+					
+					<li>
+						<a href="#view" onclick="goView('10')"><img src="/resources/upload/BOARD_GalleryStreet/201811/e5206364d8684c7f8dc5d1f016794621.jpg" alt="13.jpg" /></a>
+						<div class="desc"><p>HERE I STAND FOR YOU (2018.11.13)</p></div>
+					</li>
+					
+					<li>
+						<a href="#view" onclick="goView('9')"><img src="/resources/upload/BOARD_GalleryStreet/201808/156174f2e5884177b046f31b60a08896.jpg" alt="Untitled-1.jpg" /></a>
+						<div class="desc"><p>인물라이브(2018.07.07)</p></div>
+					</li>
+					
+					<li>
+						<a href="#view" onclick="goView('8')"><img src="/resources/upload/BOARD_GalleryStreet/201808/eea29076548e42d5bf3ecd0ab5ff262d.jpg" alt="Untitled-1.jpg" /></a>
+						<div class="desc"><p>인물라이브(2018.06.30)</p></div>
+					</li>
+					
+				
+				</ul>
+				</div>
+
+				<!-- 페이징 -->
+				
+				<ol class="pagination">
+					
+					
+					
+						<li class='active'><a href="#goPage1" onclick="goPage(1)" title="1페이지">1</a></li>
+					
+						<li class=''><a href="#goPage2" onclick="goPage(2)" title="2페이지">2</a></li>
+					
+					
+						<li class="dir next"><a href="#nextList" onclick="goPage(2)">다음페이지 <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					
+					
+				</ol>
+				
+
+				<!-- /content end -->
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /con_body -->
+
+	</div>
+	<!-- /container -->
+
+
+	<!-- footer  2018-01-05 -->
+	
+
+
+<!-- footer -->
+<footer id="footer">
+  <div class="ft_menu">
+    <ul>
+      <li><a href="/etc/private">개인정보처리방침</a></li>
+      <li><a href="/etc/email">이메일무단수집거부</a></li>
+    </ul>
+  </div>
+  <address>
+    <span class="line1">경기도 성남시 중원구 성남대로 997(여수동) 성남시청 문화관광과</span> <span class="line2">TEL. 031-729-8602</span>
+  </address>
+  <p class="copyright">Copyright 2018 ⓒ Seongnam City. All Rights Reserved.</p>
+  <div class="ft_bnnr">
+		<p class="tit">Partner</p>
+		<ul>
+  		<li>
+  			<a href="//www.seongnam.go.kr" target="_blank" title="성남시청 홈페이지 새창이동"><img src="/images/common/p_partner_bnnr1.png" alt="성남시청" /></a>
+  			<!-- <a href="//thedreambank.org" target="_blank" title="꿈이루는 세상 홈페이지 새창이동"><img src="/images/common/p_partner_bnnr2.png" alt="꿈이루는 세상" /></a> -->
+  		</li>
+  	</ul>
+  </div>
+<a href="#btn_top" class="scrollup"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span>맨위로</a>
+
+</footer>
+
+
+
+<!-- /wrap -->
+</body>
+</html>

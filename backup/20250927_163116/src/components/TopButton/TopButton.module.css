@@ -1,0 +1,77 @@
+/**
+ * TopButton 컴포넌트 스타일
+ * 우측 ScrollNav 위 TOP 버튼
+ */
+
+.topButton {
+  position: fixed;
+  right: 20px; /* 고정값으로 안전하게 설정 */
+  bottom: 140px; /* ScrollNav 위에 위치 */
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #000000;
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.topButton.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.topButton:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.topButton:active {
+  transform: translateY(-1px) scale(0.95);
+}
+
+.text {
+  display: block;
+  line-height: 1;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .topButton {
+    right: 10px; /* 모바일에서 안전한 고정값 */
+    bottom: 120px; /* ScrollNav 위에 위치 */
+    width: 44px;
+    height: 44px;
+    font-size: 0.7rem;
+  }
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .topButton {
+    right: 15px; /* 태블릿에서 안전한 고정값 */
+    bottom: 130px; /* ScrollNav 위에 위치 */
+  }
+}
+
+/* 대화면 */
+@media (min-width: 1440px) {
+  .topButton {
+    right: 30px; /* 대화면에서도 안전한 고정값 */
+    bottom: 150px; /* ScrollNav 위에 위치 */
+  }
+}

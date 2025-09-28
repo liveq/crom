@@ -1,0 +1,17 @@
+{
+  "food": {
+    "texts": []
+  },
+  "attractions": {
+    "texts": []
+  },
+  "directions": {
+    "address": [],
+    "transportation": [],
+    "texts": []
+  },
+  "construction": {
+    "timeline": [],
+    "texts": []
+  }
+}

@@ -1,0 +1,208 @@
+/**
+ * Footer 컴포넌트 스타일
+ * 사이트 푸터 디자인
+ */
+
+.footer {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 60px 0 30px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 상단 섹션 */
+.topSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* 브랜드 섹션 */
+.brandSection {
+  grid-column: span 1;
+}
+
+.brandTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.brandDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #999999;
+  margin: 0;
+}
+
+/* 링크 섹션 */
+.linkSection {
+  grid-column: span 1;
+}
+
+.linkTitle,
+.contactTitle,
+.infoTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linkList li {
+  margin-bottom: 12px;
+}
+
+.link {
+  color: #999999;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+/* 연락처 섹션 */
+.contactSection {
+  grid-column: span 1;
+}
+
+.email {
+  display: inline-block;
+  color: #999999;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.email:hover {
+  color: #ffffff;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+/* 정보 섹션 */
+.infoSection {
+  grid-column: span 1;
+}
+
+.infoText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #999999;
+  margin: 0;
+}
+
+/* 구분선 */
+.divider {
+  height: 1px;
+  background: #333333;
+  margin: 40px 0 30px;
+}
+
+/* 하단 섹션 */
+.bottomSection {
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: #666666;
+  margin: 0 0 8px 0;
+}
+
+.memorial {
+  font-size: 0.875rem;
+  color: #999999;
+  margin: 0;
+  font-style: italic;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .divider {
+    margin: 30px 0 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .topSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .topSection {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+
+  .bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .memorial {
+    margin: 0;
+  }
+}

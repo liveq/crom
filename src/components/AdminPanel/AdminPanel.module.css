@@ -1,0 +1,390 @@
+/**
+ * 관리자 패널 스타일
+ */
+
+.adminPanel {
+  padding: 80px 0;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* 로그인 폼 */
+.loginForm {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loginTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 12px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background: #333333;
+}
+
+.loginButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 0.875rem;
+  margin: -8px 0 16px 0;
+  text-align: center;
+}
+
+/* 대시보드 */
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* 사이드바 */
+.sidebar {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebarTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  margin-bottom: 8px;
+}
+
+.menuButton {
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.menuButton:hover {
+  background: #f8f8f8;
+}
+
+.menuButton.active {
+  background: #000000;
+  color: #ffffff;
+}
+
+.logoutButton {
+  width: 100%;
+  padding: 10px 16px;
+  background: #ff4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+  background: #ff6666;
+}
+
+/* 메인 콘텐츠 */
+.mainContent {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.contentTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #666666;
+  margin: 0 0 8px 0;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+/* 메시지 관리 테이블 */
+.messageTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.messageTable th {
+  background: #f8f8f8;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.messageTable td {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+.messagePreview {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.messageFull {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 500px;
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-decoration: underline;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.statusBadge.approved {
+  background: #d4f4dd;
+  color: #2e8b57;
+}
+
+.statusBadge.pending {
+  background: #fff4e5;
+  color: #ff8c00;
+}
+
+.statusBadge.rejected {
+  background: #ffe5e5;
+  color: #ff4444;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.approveButton,
+.rejectButton,
+.deleteButton {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.approveButton {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.approveButton:hover {
+  background: #45a049;
+}
+
+.rejectButton {
+  background: #ff9800;
+  color: #ffffff;
+}
+
+.rejectButton:hover {
+  background: #e68900;
+}
+
+.deleteButton {
+  background: #f44336;
+  color: #ffffff;
+}
+
+.deleteButton:hover {
+  background: #da190b;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.pageButton {
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+  border-color: #000000;
+  background: #f8f8f8;
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+/* 로딩 */
+.loading {
+  text-align: center;
+  padding: 60px 0;
+  color: #999999;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .messageTable {
+    font-size: 0.875rem;
+  }
+
+  .messageTable th,
+  .messageTable td {
+    padding: 8px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

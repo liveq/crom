@@ -1,0 +1,3 @@
+/common/css/default.css
+/common/css/jquery.bxslider.css
+/common/css/responsive.css

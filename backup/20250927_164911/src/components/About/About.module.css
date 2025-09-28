@@ -1,0 +1,206 @@
+/**
+ * About 컴포넌트 스타일
+ */
+
+.about {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  text-align: center;
+  color: #666666;
+  margin: 0 0 60px 0;
+}
+
+.content {
+  display: grid;
+  gap: 60px;
+}
+
+/* 프로필 섹션 */
+.profile {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.profileImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileInfo h3 {
+  font-size: 1.5rem;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #000000;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoList li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+.infoList li:last-child {
+  border-bottom: none;
+}
+
+.infoList span {
+  font-weight: 600;
+  min-width: 100px;
+  margin-right: 20px;
+  color: #333333;
+}
+
+/* 바이오그래피 섹션 */
+.biography {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.biography h3 {
+  font-size: 1.5rem;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #000000;
+  text-align: center;
+}
+
+.bioContent {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.bioContent p {
+  margin: 0 0 20px 0;
+}
+
+.bioContent h4 {
+  font-size: 1.25rem;
+  margin: 40px 0 20px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 타임라인 */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.year {
+  font-weight: 700;
+  color: #000000;
+  min-width: 80px;
+  margin-right: 24px;
+}
+
+.event {
+  flex: 1;
+  color: #666666;
+}
+
+/* 수상 경력 */
+.awards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.awards li {
+  padding: 12px 0;
+  padding-left: 24px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.awards li:before {
+  content: "🏆";
+  position: absolute;
+  left: 0;
+}
+
+/* 더보기 링크 */
+.moreLink {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 32px;
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.moreLink:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .profile {
+    grid-template-columns: 1fr;
+  }
+
+  .profileImage {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .infoList span {
+    min-width: 80px;
+  }
+
+  .bioContent {
+    font-size: 1rem;
+  }
+}

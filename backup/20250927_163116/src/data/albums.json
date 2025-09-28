@@ -1,0 +1,102 @@
+{
+  "solo": [
+    {
+      "title": "슬픈 표정하지 말아요",
+      "year": "1990년",
+      "cover": "/images/shin_album1.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "Myself",
+      "year": "1991년",
+      "cover": "/images/shin_album2.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "Crom's Techno Works",
+      "year": "1998년",
+      "cover": "/images/shin_album3.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "MONOCROM",
+      "year": "1999년",
+      "cover": "/images/shin_album4.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "The Songs For the One",
+      "year": "2007년",
+      "cover": "/images/shin_album5.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "Reboot Myself (6th Part 1)",
+      "year": "2014년",
+      "cover": "/images/shin_album6.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "Goodbye Mr.Trouble",
+      "year": "2012년",
+      "cover": "/images/shin_album7.jpg",
+      "artist": "신해철"
+    },
+    {
+      "title": "A.D.D.A",
+      "year": "2014년",
+      "cover": "/images/shin_album8.jpg",
+      "artist": "신해철"
+    }
+  ],
+  "next": [
+    {
+      "title": "Home",
+      "year": "1992년",
+      "cover": "/images/next_album1.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "The Return of N.EX.T Part 1: The Being",
+      "year": "1994년",
+      "cover": "/images/next_album2.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "The Return of N.EX.T Part 2: World",
+      "year": "1995년",
+      "cover": "/images/next_album3.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "Lazenca - A Space Rock Opera",
+      "year": "1997년",
+      "cover": "/images/next_album4.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "The Return of N.EX.T Part 3: 개한민국",
+      "year": "2004년",
+      "cover": "/images/next_album5.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "666 Trilogy Part I",
+      "year": "2008년",
+      "cover": "/images/next_album6.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "Here, I Stand For You",
+      "year": "1997년",
+      "cover": "/images/next_album7.jpg",
+      "artist": "N.EX.T"
+    },
+    {
+      "title": "Regame? - The 2nd fan service",
+      "year": "2006년",
+      "cover": "/images/next_album8.jpg",
+      "artist": "N.EX.T"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+/**
+ * Memorial 컴포넌트 스타일
+ * 추모 메시지 섹션
+ */
+
+.memorial {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 헤더 */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.sectionDescription {
+  font-size: 1.125rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* 폼 섹션 */
+.formSection {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.authNotice {
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.authNotice p {
+  margin: 0;
+  color: #666666;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #666666;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.input:disabled,
+.textarea:disabled {
+  background: #f8f8f8;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.charCount {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.875rem;
+  color: #999999;
+}
+
+.charCount .warning {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* 폼 액션 */
+.formActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.submitButton {
+  padding: 14px 40px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.successMessage,
+.errorMessage {
+  margin: 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.successMessage {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.errorMessage {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* 메시지 리스트 */
+.messageList {
+  display: grid;
+  gap: 20px;
+}
+
+.messageCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.messageCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.messageAuthor {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.messageDate {
+  font-size: 0.875rem;
+  color: #999999;
+}
+
+.messageContent {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+  margin: 0 0 16px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.messageFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.likeButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666666;
+}
+
+.likeButton:hover {
+  background: #f8f8f8;
+  border-color: #999999;
+  color: #000000;
+}
+
+.likeIcon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.likeCount {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* 빈 상태 */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999999;
+}
+
+/* 더보기 */
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  padding: 12px 32px;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loadMoreButton:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .memorial {
+    padding: 60px 0;
+  }
+
+  .formSection {
+    padding: 24px 20px;
+  }
+
+  .messageCard {
+    padding: 20px;
+  }
+
+  .messageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}

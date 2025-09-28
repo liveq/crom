@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CROM - Remembering Shin Hae-chul</title>
+    <script>
+      // 페이지 로드 즉시 스크롤 방지 및 최상단으로 이동
+      (function() {
+        // 브라우저 스크롤 복원 비활성화
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+
+        // DOM 로드 전부터 스크롤 위치 강제 설정
+        window.scrollTo(0, 0);
+
+        // 추가 보장을 위해 DOM 준비 후에도 실행
+        document.addEventListener('DOMContentLoaded', function() {
+          window.scrollTo(0, 0);
+        });
+
+        // React 앱 로드 전까지 스크롤 방지
+        let preventScroll = function(e) {
+          window.scrollTo(0, 0);
+        };
+
+        window.addEventListener('scroll', preventScroll, { passive: false });
+
+        // React 앱이 로드되면 스크롤 방지 해제 (1초 후)
+        setTimeout(function() {
+          window.removeEventListener('scroll', preventScroll);
+        }, 1000);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

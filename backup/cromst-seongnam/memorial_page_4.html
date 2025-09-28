@@ -1,0 +1,575 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    
+
+
+
+	<title>마왕에게 쓰는 편지 < 커뮤니티 <  신해철거리</title>
+    
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no,email=no,address=no" />
+
+	<meta name="author" content="신해철거리" />
+	<meta name="copyright" content="경기도 성남시 중원구 성남대로 997(여수동) 성남시청 관광과 / TEL. 031-729-8602" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<meta name="robots" content="index" />
+	<meta name="subject" content="신해철거리" />
+	<meta name="description" content="신해철거리,프롤로그,앨범,갤러리,신해철이야기,신해철거리,커뮤니티" />
+	<meta name="keywords" content="신해철,신해철거리" />
+	<meta name="naver-site-verification" content="75e2ecd85341383bb2de9120f724bf816e065a4c"/>
+
+	<!-- css -->
+	<link type="text/css" rel="stylesheet" href="/common/css/default.css">
+	<link type="text/css" rel="stylesheet" href="/common/css/responsive.css">
+	<link type="text/css" rel="stylesheet" href="/common/css/jquery.bxslider.css">
+
+	<!-- js -->
+	<script type="text/javascript" src="/common/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/common/js/default.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.dotdotdot.min.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.placeholder.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.PrintArea.js"></script>
+	<script type="text/javascript" src="/common/plugin/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="/common/plugin/materialize.min.js"></script> <!-- 모바일웹 레프트 메뉴 -->
+	<script type="text/javascript" src="/common/plugin/tooltipster.bundle.min.js"></script>
+
+	<script type="text/javascript">
+	  // https로 이동
+	  var url = location.href;
+	  if(url.replace("https://","") == url) location.href = "https://cromst.seongnam.go.kr:10005";
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90791842-7"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-90791842-7');
+	</script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	    <script src="/common/js/html5shiv.min.js"></script>
+	    <script src="/common/js/respond.min.js"></script>
+	<![endif]-->
+
+
+<script type="text/javascript">
+
+function goPage(page){
+	$("#cPage").val(page);
+
+	$("#frm").attr("action", "/community/memorial");
+	$("#frm").submit();
+}
+
+function goWrite(){
+    var filter = [ '야동','포르노','카드연체','신용불량','sex','porno','섹스','비디오','신.용.불.량','야.동','성.인','섹.스','포.르.노','카.드','script','javascript','SCRIPT','JAVASCRIPT','#115','#99','#114','#105','#112','#116','onload','ONLOAD','COOKIE','cookie','%2', ];
+    var keyword = $('#comment').val();
+
+    for(var i in filter){
+        if(keyword.indexOf(filter[i]) >= 0){
+            alert("["+filter[i] + "] 단어는 입력하실 수 없습니다.");
+            return false;
+        }
+    }
+	
+	if($("#writer").val() == ""){
+		alert("등록자명을 입력해주세요 ");
+		$("#writer").focus();
+		return false;
+	}
+	if($("#passwd").val() == ""){
+		alert("비밀번호를 입력해주세요 ");
+		$("#passwd").focus();
+		return false;
+	}
+
+  	if($("#comment").val() == ""){
+		alert("내용을 입력해주세요 ");
+		$("#comment").focus();
+		return false;
+	} 
+	
+  	$("#workType").val("addMemorial");
+	$("#doForm").attr("action", "/community/memorial");
+	$("#doForm").submit();
+}
+
+
+function commentDelete() {
+	//alert($("#delIdx").val() +" || "+ $("#delPasswd").val() +" || "+ $("#delType").val());
+
+	if(!confirm("글을 삭제하시겠습니까?\n\n삭제하신후 다시 복원할수 없습니다.")){
+		return;
+	}
+	
+	$("#delType").val("delMemorial");
+
+	$("#frmComment").attr("action", "/community/memorial");
+	$("#frmComment").submit();	
+}
+
+function onlyNumber(obj) {
+    $(obj).keyup(function(){
+         $(this).val($(this).val().replace(/[^0-9]/g,""));
+    });
+}
+
+
+var nameLimit = 12, passwdLimit=20, commentLimit=300;
+$(document).ready(function() {
+    $('#writer').on('keyup', function() {
+        if($(this).val().length > nameLimit) {
+        	alert(nameLimit+"자 이하로 입력해주세요");
+            $(this).val($(this).val().substring(0, nameLimit));
+        }
+    });
+    $('#passwd').on('keyup', function() {
+        if($(this).val().length > passwdLimit) {
+        	alert(passwdLimit+"자 이하로 입력해주세요");
+            $(this).val($(this).val().substring(0, passwdLimit));
+        }
+    });
+    $('#comment').on('keyup', function() {
+        if($(this).val().length > commentLimit) {
+        	alert(commentLimit+"자 이하로 입력해주세요");
+            $(this).val($(this).val().substring(0, commentLimit));
+        }
+    });
+    
+});
+
+
+function kboard_search_submit(){
+
+    return true;
+}
+
+</script>
+</head>
+<body>
+	<!-- accessibility -->
+	
+
+
+<!-- hidden link shortcut -->
+<ul id="accessibility">
+  <li><a href="#skip_con">본문 바로가기</a></li>
+  <li><a href="#skip_lnb">메인메뉴 바로가기</a></li>
+  <li><a href="#skip_snb">세부메뉴 바로가기</a></li>
+</ul>
+
+
+	<!-- header  2018-01-05 -->
+	
+
+
+<div id="wrap">
+	<!-- Pc header  -->
+	<header id="header">
+		<h1 class="logo">
+			<a href="/">신해철<span>거리</span></a>
+		</h1>
+		<nav>
+			<div id="skip_lnb" class="lnb_wrap">
+				<ul class="lnb">
+					<li><a href="/prologue/profile">프롤로그</a>
+						<div id="depth1" class="lnb_depth">
+							<ul>
+								<li><a href="/prologue/profile">프로필</a></li>
+								<li><a href="/prologue/biography">바이오그래피</a></li>
+								<li><a href="/prologue/awards">수상경력</a></li>
+								<li><a href="/prologue/history">걸어온길</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/story/musician">신해철이야기</a>
+						<div id="depth2" class="lnb_depth">
+							<ul>
+								<li><a href="/story/musician">뮤지션 신해철</a></li>
+								<li><a href="/story/human">인간 신해철</a></li>
+								<li><a href="/story/philosophy">시민 신해철</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/street/street">신해철거리</a>
+						<div id="depth3" class="lnb_depth">
+							<ul>
+								<li><a href="/street/street">신해철거리 둘러보기</a></li>
+								<li><a href="/street/workplace">신해철작업실 둘러보기</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/album/shinhaechul">앨범</a>
+						<div id="depth4" class="lnb_depth">
+							<ul>
+								<li><a href="/album/shinhaechul">신해철</a></li>
+								<li><a href="/album/next">넥스트</a></li>
+							</ul>
+						</div></li>
+					<li><a href="/gallery/gallery">갤러리</a>
+						<div id="depth5" class="lnb_depth">
+							<ul>
+								<li><a href="/gallery/gallery">갤러리</a></li>
+								<li><a href="/gallery/street">거리행사</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="/community/notice">커뮤니티</a>
+						<div id="depth6" class="lnb_depth">
+							<ul>
+								<li><a href="/community/notice">공지사항</a></li>
+								<!-- <li><a href="/community/calendar">행사안내</a></li> -->
+								<li><a href="/community/street">거리마당</a></li>
+								<li><a href="/community/memorial">마왕에게 쓰는 편지</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</div>
+			<a href="//www.seongnam.go.kr" class="link" target="_blank"
+				title="성남시청 홈페이지 새창이동">support by <span>성남시</span></a>
+		</nav>
+	</header>
+	<!-- /Pc header  -->
+
+	<!-- Mobile header  -->
+	<nav id="mo_header">
+		<h2 class="skip">모바일용 메뉴</h2>
+		<div id="slide-out" class="side-nav fixed mo_menu">
+			<ul class="collapsible collapsible-accordion depth1">
+				<li><a href="#" class="collapsible-header sub">프롤로그</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/prologue/profile">프로필</a></li>
+							<li><a href="/prologue/biography">바이오그래피</a></li>
+							<li><a href="/prologue/awards">수상경력</a></li>
+							<li><a href="/prologue/history">걸어온길</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">신해철이야기</a>
+					<div class="collapsible-body depth2">
+						<ul>
+								<li><a href="/story/musician">뮤지션 신해철</a></li>
+								<li><a href="/story/human">인간 신해철</a></li>
+								<li><a href="/story/philosophy">시민 신해철</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">신해철거리</a>
+					<div class="collapsible-body depth2">
+						<ul>
+								<li><a href="/street/street">신해철거리 둘러보기</a></li>
+								<li><a href="/street/workplace">신해철작업실 둘러보기</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">앨범</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/album/shinhaechul">신해철</a></li>
+							<li><a href="/album/next">넥스트</a></li>
+						</ul>
+					</div></li>
+				<li><a href="/gallery/gallery" class="collapsible-header">갤러리</a></li>
+				<li><a href="#" class="collapsible-header sub">커뮤니티</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/community/notice">공지사항</a></li>
+							<!-- <li><a href="/community/calendar">행사안내</a></li> -->
+							<li><a href="/community/street">거리마당</a></li>
+							<li><a href="/community/memorial">마왕에게 쓰는 편지</a></li>
+						</ul>
+					</div></li>
+				<li><a href="#" class="collapsible-header sub">이용안내</a>
+					<div class="collapsible-body depth2">
+						<ul>
+							<li><a href="/etc/private">개인정보처리방침</a></li>
+							<li><a href="/etc/email">이메일무단수집거부</a></li>
+						</ul>
+					</div></li>
+			</ul>
+		</div>
+		<a href="#menu" data-activates="slide-out"
+			class="button-collapse btn_menu"><i class="fa fa-bars"
+			aria-hidden="true"></i><span class="skip">전체메뉴</span></a> <a href="/"
+			class="btn_home"><i class="fa fa-home" aria-hidden="true"></i><span
+			class="skip">메인화면</span></a>
+		<h2 class="tit">신해철거리</h2>
+	</nav>
+	<script type="text/javascript">
+		$('.button-collapse').sideNav({
+			menuWidth : 300, // Default is 240
+			closeOnClick : true
+		// Closes side-nav on <a> clicks, useful for Angular/Meteor
+		});
+		$('.collapsible').collapsible();
+	</script>
+	<!-- /Mobile header  -->
+
+
+	<div id="container">
+
+<div class="con_head">
+
+<div class="location">
+	<h2>커뮤니티</h2>
+	<ol class="path">
+		<li><i class="fa fa-home" aria-hidden="true"></i> HOME</li>
+		<li>커뮤니티</li>
+		<li>마왕에게 쓰는 편지</li>
+	</ol>
+</div>
+<!-- /location -->
+
+<div id="skip_snb" class="snb_wrap">
+	<div class="snb">
+		<ul>
+			<li><a href="/community/notice">공지사항</a></li>
+			<!-- <li><a href="/community/calendar">행사안내</a></li> -->
+			<li><a href="/community/street">거리마당</a></li>
+			<li class="on"><a href="/community/memorial">마왕에게 쓰는 편지</a></li>
+		</ul>
+	</div>
+	<!-- /snb -->
+
+	<!-- sns -->
+	
+
+
+<div class="sns">
+	<ul>
+		<li class="tw"><a class="tooltip" href="#sns_twitter" onclick="sns_twitter('', location.href);" title="트위터 공유하기(새창)">트위터 공유하기</a></li>
+		<li class="fb"><a class="tooltip" href="#sns_facebook" onclick="sns_facebook('', location.href);" title="페이스북 공유하기(새창)">페이스북 공유하기</a></li>
+		<li class="ka"><a class="tooltip" href="#sns_kakaotok" onclick="sns_kakaotok('', location.href);" title="카카오스토리 공유하기(새창)">카카오스토리 공유하기</a></li>
+		<li class="print"><a class="tooltip" href="#sns_print" id="print" title="프린트 출력하기(새창)">프린트 출력하기</a></li>
+	</ul>
+</div>
+
+
+</div>
+<!-- snb_wrap -->
+
+</div>
+<!-- /con_header -->
+
+<div id="skip_con" class="con_body">
+	<div class="content">
+		<!-- content start -->
+
+		<div class="memori_head">
+			<div class="intro"><img src="/images/content/img_memori_intro.jpg" alt="2014년 10월 27일 마왕, 우리 곁을 떠나다. 벌써부터 당신을 너무나 그리워하는...우리들의 편지를 준비했습니다." /></div>
+			<form name="doForm" id="doForm" action="#" method="post">
+				<input type="hidden" name="workType" id="workType" />
+				<fieldset>
+				<legend>편지 작성</legend>
+				<textarea name="comment" id="comment" cols="30" rows="3" maxlength="300" placeholder="여기를 클릭하여 내용을 입력해주세요(300자 이하)"></textarea>
+				<span class="ipt_pw"><span class="box"><label for="writer">작성자</label> <input type="text" name="writer" id="writer" class="memori_pw" /></span> <span class="box"><label for="passwd">비밀번호</label><input type="password" name="passwd" id="passwd" class="memori_pw" /></span></span>
+				<button type="button" onclick="goWrite();" class="btn_write"><i class="fa fa-envelope-o" aria-hidden="true"></i> 편지 남기기</button>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="memori_list1">
+			<p class="info">※ 사회통념에 위배되는 글, 비난글, 상업 및 광고/홍보성 글은 사전통보없이 삭제됩니다.</p>
+
+			<ul>
+			
+				
+				<li>
+					안녕하세요 곧 11주년 다 돼 가네요. 저 중학생 에도 들을게요
+					<span class="info">
+						<i class="fa fa-smile-o" aria-hidden="true"></i> 김현성&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-clock-o" aria-hidden="true"></i> 2025-09-10
+					</span>
+					<a href="#delete" class="modal-trigger del tooltip" title="글 삭제하기" onclick="$('#delIdx').val('586');" data-modal="modal-name">글 삭제하기</a>
+				</li>
+				
+				<li>
+					7월도 중순에 접어들고 있어요.
+자주 못찾아보는데 여기마저 없어지면 안되는데 하고 들어오게됩니다.
+편히 쉬소서
+					<span class="info">
+						<i class="fa fa-smile-o" aria-hidden="true"></i> 쇼트&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-clock-o" aria-hidden="true"></i> 2025-07-12
+					</span>
+					<a href="#delete" class="modal-trigger del tooltip" title="글 삭제하기" onclick="$('#delIdx').val('585');" data-modal="modal-name">글 삭제하기</a>
+				</li>
+				
+				<li>
+					잠못드는밤 문득 형생각에 
+방문했어요.
+그곳은 평안하신지요?
+그립네요.
+어릴적 갔었던 콘서트도 기억나네요.
+언젠가  형의 영화가 나왔으면해요.
+다같이 영화보며 떼창하고 싶네요.
+					<span class="info">
+						<i class="fa fa-smile-o" aria-hidden="true"></i> 크롬&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-clock-o" aria-hidden="true"></i> 2025-06-21
+					</span>
+					<a href="#delete" class="modal-trigger del tooltip" title="글 삭제하기" onclick="$('#delIdx').val('584');" data-modal="modal-name">글 삭제하기</a>
+				</li>
+				
+				<li>
+					안녕 오빠..해가 바뀌면 이상하게 어떤 날 오빠가 사무치게 그리울 때가 있어..오늘이 그날이네..근데 너무 오래 그리워하지 않을려고..이런저런 핑계로 추모관에 찾아간지도 좀 되었고 예전보다 오빠를 잊고 살아가는 일상이 더 많아졌지만 그래서 이렇게 문득문득 그리워질땐 그리도 더욱 사무치나봐...가슴속에 묻는다는게 아마 이런건가봐 오빠..내 가치관의 정립부터 태도의 전부를 차지한 존재인 오빠...어떻게 오빠를 잊을 수 있을까...오빠는 과거에 있지만 나의 어제는 나의 현재는 나의 미래는  늘 오빠의 시간과 함께 흘러...보고싶다 오빠.
+					<span class="info">
+						<i class="fa fa-smile-o" aria-hidden="true"></i> 현&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-clock-o" aria-hidden="true"></i> 2025-05-28
+					</span>
+					<a href="#delete" class="modal-trigger del tooltip" title="글 삭제하기" onclick="$('#delIdx').val('583');" data-modal="modal-name">글 삭제하기</a>
+				</li>
+				
+				<li>
+					어느덧 저도 오빠가 멀리 떠난 그 나이가 되었어요.  오늘도 남기신 음악을 들으며 어딘가에 영원히 존재하고 있을 것만 같은 오빠를  향한 그리움을 달래봅니다. 보고싶습니다. 나의 신해철 .
+					<span class="info">
+						<i class="fa fa-smile-o" aria-hidden="true"></i> Missyou&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-clock-o" aria-hidden="true"></i> 2025-05-28
+					</span>
+					<a href="#delete" class="modal-trigger del tooltip" title="글 삭제하기" onclick="$('#delIdx').val('582');" data-modal="modal-name">글 삭제하기</a>
+				</li>
+				
+				<li>
+					마왕 57번째 탄신일을 너무너무 축하해!
+내일도 동료, 후배 형님들이 시월 공연을 강남에서 하더라구
+귀인 덕분에 철이 형 노래를 또 즐겁게 즐길 수 있을 것 같아
+지금은 형의 'Hope'가 흘러나오고 있어. 난 올해 이것저것 잘 해야 될 게 많은데 잘할 수 있겠징?
+늘 형은 내 곁에 계시니 걱정하진 않지만 그래도 잘 하고 싶어서 말이지. 늘 행복하셩!!
+					<span class="info">
+						<i class="fa fa-smile-o" aria-hidden="true"></i> 희필 허승엽&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-clock-o" aria-hidden="true"></i> 2025-05-09
+					</span>
+					<a href="#delete" class="modal-trigger del tooltip" title="글 삭제하기" onclick="$('#delIdx').val('581');" data-modal="modal-name">글 삭제하기</a>
+				</li>
+				
+				
+		  </ul>
+		</div>
+		<div class="delbox">
+			<form name="frmComment" id="frmComment" action="#" method="post">
+			<input type="hidden" name="delIdx" id="delIdx" /> 
+			<input type="hidden" name="delType" id="delType" />
+			<div class="modal" id="modal-name">
+				<div class="modal-sandbox"></div>
+				<div class="modal-box">
+					<div class="modal-header">
+						<h1>글 삭제하기</h1>
+					</div>
+					<div class="modal-body">
+						<input type="password" class="ipt_set big memori_list_del" id="delPasswd" name="delPasswd" size="40" title="비밀번호를 입력해주세요." placeholder="비밀번호를 입력해주세요.">
+	
+						<div class="btn_box text-center">
+							<a href="#Delete" class="btn_set red big close-modal" onclick="commentDelete();">삭제하기</a>
+							<a href="#Close" class="btn_set black big close-modal">창닫기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			$(".modal-trigger").click(function(e){
+			e.preventDefault();
+			dataModal = $(this).attr("data-modal");
+			$("#" + dataModal).css({"display":"block"});
+			});
+
+			$(".close-modal, .modal-sandbox").click(function(){
+			$(".modal").css({"display":"none"});
+			$('.modal-trigger').focus();
+			return false;
+			});
+		</script>
+		<!-- 페이징 -->
+		
+		<ol class="pagination">
+			
+			
+			
+				<li class='active'><a href="#goPage1" onclick="goPage(1)" title="1페이지">1</a></li>
+			
+				<li class=''><a href="#goPage2" onclick="goPage(2)" title="2페이지">2</a></li>
+			
+				<li class=''><a href="#goPage3" onclick="goPage(3)" title="3페이지">3</a></li>
+			
+				<li class=''><a href="#goPage4" onclick="goPage(4)" title="4페이지">4</a></li>
+			
+				<li class=''><a href="#goPage5" onclick="goPage(5)" title="5페이지">5</a></li>
+			
+				<li class=''><a href="#goPage6" onclick="goPage(6)" title="6페이지">6</a></li>
+			
+				<li class=''><a href="#goPage7" onclick="goPage(7)" title="7페이지">7</a></li>
+			
+				<li class=''><a href="#goPage8" onclick="goPage(8)" title="8페이지">8</a></li>
+			
+				<li class=''><a href="#goPage9" onclick="goPage(9)" title="9페이지">9</a></li>
+			
+				<li class=''><a href="#goPage10" onclick="goPage(10)" title="10페이지">10</a></li>
+			
+			
+				<li class="dir next"><a href="#nextList" onclick="goPage(2)">다음페이지 <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			
+			
+				<li class="dir last"><a href="#nextPage" onclick="goPage(11)">다음 10페이지로 이동</a></li>
+			
+		</ol>
+		
+		<!-- 페이징 -->
+
+
+		<!-- /content end -->
+	</div>
+	<!-- /content -->
+</div>
+<!-- /con_body -->
+
+</div>
+<!-- /container -->
+
+
+	<!-- footer  2018-01-05 -->
+	
+
+
+<!-- footer -->
+<footer id="footer">
+  <div class="ft_menu">
+    <ul>
+      <li><a href="/etc/private">개인정보처리방침</a></li>
+      <li><a href="/etc/email">이메일무단수집거부</a></li>
+    </ul>
+  </div>
+  <address>
+    <span class="line1">경기도 성남시 중원구 성남대로 997(여수동) 성남시청 문화관광과</span> <span class="line2">TEL. 031-729-8602</span>
+  </address>
+  <p class="copyright">Copyright 2018 ⓒ Seongnam City. All Rights Reserved.</p>
+  <div class="ft_bnnr">
+		<p class="tit">Partner</p>
+		<ul>
+  		<li>
+  			<a href="//www.seongnam.go.kr" target="_blank" title="성남시청 홈페이지 새창이동"><img src="/images/common/p_partner_bnnr1.png" alt="성남시청" /></a>
+  			<!-- <a href="//thedreambank.org" target="_blank" title="꿈이루는 세상 홈페이지 새창이동"><img src="/images/common/p_partner_bnnr2.png" alt="꿈이루는 세상" /></a> -->
+  		</li>
+  	</ul>
+  </div>
+<a href="#btn_top" class="scrollup"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span>맨위로</a>
+
+</footer>
+
+
+	<form id="frm" name="frm" action="#" method="post">
+		<input type="hidden" name="cPage" id="cPage" value="1" />
+	</form>
+	
+	<!-- /wrap -->
+</body>
+</html>

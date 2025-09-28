@@ -1,0 +1,460 @@
+/* 지도 컨테이너 */
+.mapSection {
+  width: 100%;
+  background: #2c2c2c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* 컨텐츠에 맞춰 자동 조정 */
+}
+
+/* 상단 지도 영역 - 스크롤 가능 */
+.mapContainer {
+  width: 100%;
+  max-width: 1300px; /* 스크롤 영역을 1300px로 제한 */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+/* 스크롤 컨텐츠를 위한 inner wrapper */
+.mapInner {
+  width: 1300px; /* 실제 스크롤될 컨텐츠 너비 */
+  height: 370px;
+  position: relative;
+  overflow: visible; /* 버튼 클릭 가능하도록 visible로 변경 */
+}
+
+.map {
+  width: 1754px; /* 원본 이미지 크기 유지 (버튼 좌표를 위해) */
+  height: 370px; /* 실제 지도 높이에 맞춰 축소 */
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('/street-assets/bg_street_map.png') no-repeat 0 0;
+  background-size: 1754px 306px;
+  background-position: 0 0;
+}
+
+.location {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 각 구역 버튼 위치 */
+.btn_area1 {
+  position: absolute;
+  top: 120px;
+  left: 125px;
+  width: 132px;
+  height: 109px;
+  cursor: pointer;
+}
+
+.btn_area2 {
+  position: absolute;
+  top: 105px;
+  left: 480px;
+  width: 92px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.btn_area3 {
+  position: absolute;
+  top: 52px;
+  left: 633px;
+  width: 158px;
+  height: 130px;
+  cursor: pointer;
+}
+
+.btn_area4 {
+  position: absolute;
+  top: 120px;
+  left: 1060px;
+  width: 92px;
+  height: 109px;
+  cursor: pointer;
+}
+
+.btn_area5 {
+  position: absolute;
+  top: 52px;
+  left: 1160px; /* 1300px 범위 내로 조정 */
+  width: 132px;
+  height: 109px;
+  cursor: pointer;
+}
+
+/* 구역 링크 스타일 */
+.location span {
+  display: block;
+  position: absolute;
+}
+
+.location span a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.location span a i {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url('/street-assets/icon_location1.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 5px;
+}
+
+.btn_area2 a i {
+  background: url('/street-assets/icon_location2.png') no-repeat center;
+  background-size: contain;
+}
+
+/* 호버 효과 */
+.location span:hover a i {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.location span:hover a {
+  color: #f39c12;
+}
+
+.subText {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* 범례 - 하단 고정 */
+.legend {
+  padding: 20px;
+  text-align: center;
+  background: #1a1a1a;
+  border-top: 1px solid #444;
+  position: relative;
+  z-index: 10;
+}
+
+.legend ul {
+  display: inline-flex;
+  gap: 30px;
+  list-style: none;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend li span {
+  color: #fff;
+}
+
+.legend i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon1 { background-image: url('/street-assets/icon_info1.png'); }
+.icon2 { background-image: url('/street-assets/icon_info2.png'); }
+.icon3 { background-image: url('/street-assets/icon_info3.png'); }
+.icon4 { background-image: url('/street-assets/icon_info4.png'); }
+.icon5 { background-image: url('/street-assets/icon_info5.png'); }
+.icon6 { background-image: url('/street-assets/icon_info6.png'); }
+
+/* 모달 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  background: #1a1a1a;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: #222;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.closeButton img {
+  width: 100%;
+  height: 100%;
+}
+
+.closeButton:hover {
+  opacity: 0.8;
+}
+
+/* 탭 버튼 */
+.modalTabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: #2a2a2a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.tabButton.active {
+  opacity: 1;
+  background: rgba(243, 156, 18, 0.3);
+  border-color: #f39c12;
+}
+
+.tabButton:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.tabButton img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 이미지 뷰어 */
+.modalBody {
+  position: relative;
+  background: #000;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* 네비게이션 버튼 */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.navButton:hover {
+  opacity: 1;
+}
+
+.navButton img {
+  width: 100%;
+  height: 100%;
+}
+
+.bxPrev {
+  left: 20px;
+}
+
+.bxNext {
+  right: 20px;
+}
+
+/* 이미지 카운터 */
+.imageCounter {
+  text-align: center;
+  padding: 15px;
+  color: #ccc;
+  font-size: 16px;
+  background: #1a1a1a;
+}
+
+.imageCounter .current {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 반응형 */
+@media (max-width: 1800px) {
+  .mapContainer {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .mapContainer::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .mapContainer::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+
+  .mapContainer::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+  }
+
+  .mapContainer::-webkit-scrollbar-thumb:hover {
+    background: #777;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapSection {
+    height: auto;
+  }
+
+  .mapContainer {
+    padding: 10px 0;
+    max-width: 100%;
+  }
+
+  .mapInner {
+    width: 650px; /* 모바일에서 scale 0.5 고려 */
+    height: 185px; /* scale 0.5 후 높이 */
+  }
+
+  .map {
+    transform: scale(0.5);
+    transform-origin: left top;
+    height: 370px;
+    width: 1754px; /* 원본 이미지 크기 유지 */
+  }
+
+  .legend {
+    padding: 15px 10px;
+  }
+
+  .legend ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 15px;
+  }
+
+  .legend li {
+    font-size: 12px;
+  }
+
+  .modalContent {
+    width: 95%;
+    border-radius: 0;
+  }
+
+  .modalHeader {
+    padding: 15px;
+  }
+
+  .modalHeader h2 {
+    font-size: 18px;
+  }
+
+  .modalTabs {
+    position: static;
+    padding: 10px;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .modalBody {
+    height: 400px;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bxPrev {
+    left: 10px;
+  }
+
+  .bxNext {
+    right: 10px;
+  }
+}

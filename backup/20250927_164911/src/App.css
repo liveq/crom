@@ -1,0 +1,12 @@
+/**
+ * App 전역 스타일
+ * 흑백 기반 미니멀 디자인
+ */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding-top: 70px; /* 헤더 높이만큼 여백 */
+}
